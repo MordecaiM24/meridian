@@ -1,7 +1,7 @@
 # openai_compat.py
 from fastapi import FastAPI, UploadFile, Form, File
 from fastapi.responses import JSONResponse
-from typing import Optional, List, Literal
+from typing import Optional, Literal, List
 import tempfile
 import subprocess
 import json
@@ -20,8 +20,14 @@ async def transcribe(
     ),
     temperature: float = Form(0.0),
     language: Optional[str] = Form(None),
-    timestamp_granularities: Optional[List[str]] = Form(None),
+    timestamp_granularities: Optional[List[str]] = Form(
+        None, alias="timestamp_granularities[]"
+    ),
 ):
+
+    print(f"timestamp_granularities: {timestamp_granularities}")
+    print(f"type: {type(timestamp_granularities)}")
+
     # save the wav
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
         content = await file.read()

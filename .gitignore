@@ -15,3 +15,5 @@ models/
 
 # Audio files
 *.wav
+
+*.env
