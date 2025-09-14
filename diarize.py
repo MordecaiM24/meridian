@@ -137,12 +137,3 @@ def save_speakers_map(video_dir: str, base_name: str, mapping: Dict[str, str]) -
     with open(path, "w", encoding="utf-8") as f:
         json.dump(mapping, f, ensure_ascii=False, indent=2)
     return str(path)
-
-
-if __name__ == "__main__":
-    try:
-        results = diarize_playlist("short-longform", hf_token=hf_token)
-        output_files = save_playlist_diarization(results)
-        print(f"Diarization complete. Output files: {output_files}")
-    except Exception as e:
-        print(f"Error during diarization: {e}")
