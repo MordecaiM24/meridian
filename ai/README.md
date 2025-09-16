@@ -19,9 +19,10 @@ The default model is `models/ggml-medium.en.bin`. You can change the model by ed
   - [With pip](#with-pip)
 - [Diarization setup (HF_TOKEN)](#diarization-setup-hf_token)
 - [Running](#running)
-  - [CLI (auto-starts server)](#cli-auto-starts-server)
-  - [Starting the server manually](#starting-the-server-manually)
-  - [Calling the server API](#calling-the-server-api)
+- [CLI (auto-starts server)](#cli-auto-starts-server)
+- [Starting the server manually](#starting-the-server-manually)
+- [Calling the server API](#calling-the-server-api)
+- [Workflow HTTP API](#workflow-http-api)
 - [Outputs](#outputs)
 - [YouTube support](#youtube-support)
 - [Model selection](#model-selection)
@@ -149,6 +150,54 @@ with open("audio.wav", "rb") as f:
     )
 print(resp)
 ```
+
+### Workflow HTTP API
+
+`api.py` exposes the CLI workflow through a FastAPI application so you can trigger
+transcription, diarization, and merging jobs remotely.
+
+Start the API server (this is separate from the OpenAI-compatible whisper server):
+
+```bash
+uvicorn api:app --host 0.0.0.0 --port 8080
+```
+
+Available endpoints:
+
+| Method | Path | Description |
+| ------ | ---- | ----------- |
+| `GET`  | `/health` | Simple readiness check. |
+| `POST` | `/ensure-whisper` | Start (or verify) the whisper server. Accepts JSON `{"port": 8000, "host": "0.0.0.0"}`. |
+| `POST` | `/process` | Mirror of the CLI flags. Accepts JSON with `input`, `output`, `speakers`, `no_diarize`, `keep_temp`, `whisper_port`, and `no_server`. `input` can be a local path or a YouTube URL. |
+| `POST` | `/process/upload` | Multipart form endpoint that accepts an uploaded file (`file`) with optional form fields matching the CLI flags. |
+
+Examples:
+
+Trigger processing of a local file on the machine hosting the API:
+
+```bash
+curl -X POST http://localhost:8080/process \
+  -H "Content-Type: application/json" \
+  -d '{
+        "input": "/data/interview.wav",
+        "output": "transcripts/",
+        "no_diarize": false,
+        "whisper_port": 8000
+      }'
+```
+
+Upload an audio file directly via HTTP and write outputs into `transcripts/`:
+
+```bash
+curl -X POST http://localhost:8080/process/upload \
+  -F file=@audio.wav \
+  -F output=transcripts \
+  -F no_diarize=true
+```
+
+Each endpoint responds with the generated artifact paths (transcription,
+diarization, combined transcript) so you can pick up the results from your
+automation scripts.
 
 ## Outputs
 For an input base name like `sample` and output directory `out/`, the CLI writes:
