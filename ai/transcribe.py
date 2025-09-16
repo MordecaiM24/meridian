@@ -24,9 +24,7 @@ async def transcribe(
         None, alias="timestamp_granularities[]"
     ),
 ):
-
-    print(f"timestamp_granularities: {timestamp_granularities}")
-    print(f"type: {type(timestamp_granularities)}")
+    print("received request")
 
     # save the wav
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:

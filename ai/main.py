@@ -18,6 +18,8 @@ def ensure_whisper_server(port=8000, host="0.0.0.0"):
 
     if result.returncode == 0:
         print(f"whisper server already running on port {port}")
+        client = OpenAI(base_url=f"http://localhost:{port}/v1", api_key="dummy")
+        print(client.models.list())
         return
 
     print(f"starting whisper server on {host}:{port}...")
@@ -87,15 +89,17 @@ def process_audio(
     # transcribe
     print(f"transcribing {audio_file}...")
     client = OpenAI(base_url=f"http://localhost:{whisper_port}/v1", api_key="dummy")
+    print("client created")
 
     with open(audio_file, "rb") as f:
+        print("opening file")
         transcript = client.audio.transcriptions.create(
             file=f,
             model="whisper-1",
             response_format="verbose_json",
             timestamp_granularities=["word", "segment"],
         )
-
+    
     # save raw transcription
     transcription_file = output_dir / f"{base_name}.transcription.json"
     with open(transcription_file, "w") as f:
