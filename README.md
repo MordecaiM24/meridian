@@ -1,3 +1,4 @@
+
 # Meridian
 
 Local-first speech-to-text with speaker diarization. This repo wraps whisper.cpp behind an OpenAI-compatible FastAPI server and provides a CLI that can:
@@ -8,6 +9,8 @@ Local-first speech-to-text with speaker diarization. This repo wraps whisper.cpp
 - Emit structured JSON files for raw transcription, diarization, and a merged, speaker-labelled transcript
 
 The default model is `models/ggml-medium.en.bin`. You can change the model by editing `transcribe.py`.
+
+> This repo hasn't been merged with the associated RAG application to become a monorepo yet - check that out [here](https://github.com/MordecaiM24/ncsu-sg/)
 
 ---
 
