@@ -10,7 +10,7 @@ Local-first speech-to-text with speaker diarization. This repo wraps whisper.cpp
 
 The default model is `models/ggml-medium.en.bin`. You can change the model by editing `transcribe.py`.
 
-> This repo hasn't been merged with the associated RAG application to become a monorepo yet - check that out [here](https://github.com/MordecaiM24/ncsu-sg/)
+> This repo hasn't been merged with the associated RAG application to become a monorepo yet - check that out [here](https://github.com/MordecaiM24/ncsu-sg/) for the current [public version](https://sg.m16b.com/) or [here](https://github.com/MordecaiM24/aletheia) for the more modular, scalable update that'll be out soon.
 
 ---
 
