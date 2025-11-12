@@ -1,4 +1,5 @@
 import SwiftUI
+import UniformTypeIdentifiers
 
 // MARK: - Data Models
 struct Experience: Identifiable, Hashable {
@@ -147,7 +148,15 @@ struct ExperienceRow: View {
 
 // MARK: - New Experience View
 struct NewExperienceView: View {
+    @StateObject private var viewModel = MeridianViewModel()
     @State private var dragOver = false
+    @State private var showingFileImporter = false
+    @State private var showingLinkSheet = false
+    @State private var playlistLink = ""
+    
+    @State private var showStatusBanner = true
+    
+    private let allowedContentTypes: [UTType] = [.audio, .movie]
     
     var body: some View {
         VStack(spacing: 24) {
@@ -176,7 +185,7 @@ struct NewExperienceView: View {
                     description: "Import audio or video files",
                     color: .blue,
                     action: {
-                        // Handle file upload
+                        showingFileImporter = true
                     }
                 )
                 
@@ -187,7 +196,8 @@ struct NewExperienceView: View {
                     description: "YouTube or other platforms",
                     color: .purple,
                     action: {
-                        // Handle playlist link
+                        playlistLink = ""
+                        showingLinkSheet = true
                     }
                 )
                 
@@ -198,7 +208,9 @@ struct NewExperienceView: View {
                     description: "Record live audio",
                     color: .red,
                     action: {
-                        // Handle recording
+                        Task {
+                            await viewModel.ensureWhisperServer()
+                        }
                     }
                 )
             }
@@ -221,15 +233,74 @@ struct NewExperienceView: View {
                 )
                 .padding(.horizontal)
                 .onDrop(of: [.fileURL], isTargeted: $dragOver) { providers in
-                    // Handle file drop
+                    guard let provider = providers.first else {
+                        return false
+                    }
+                    let identifier = UTType.fileURL.identifier
+                    provider.loadItem(forTypeIdentifier: identifier, options: nil) { item, error in
+                        if let error {
+                            Task { await viewModel.reportClientError(message: error.localizedDescription) }
+                            return
+                        }
+                        let url: URL?
+                        if let data = item as? Data {
+                            url = URL(dataRepresentation: data, relativeTo: nil)
+                        } else {
+                            url = item as? URL
+                        }
+                        guard let resolvedURL = url else {
+                            Task { await viewModel.reportClientError(message: "Unable to read dropped file.") }
+                            return
+                        }
+                        Task {
+                            await viewModel.upload(fileURL: resolvedURL)
+                        }
+                    }
                     return true
                 }
+            
+            if showStatusBanner, let message = viewModel.status.message {
+                StatusBannerView(status: viewModel.status, message: message, onClose: { showStatusBanner = false })
+                    .padding(.horizontal)
+            }
             
             Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(NSColor.controlBackgroundColor))
+        .fileImporter(
+            isPresented: $showingFileImporter,
+            allowedContentTypes: allowedContentTypes,
+            allowsMultipleSelection: false
+        ) { result in
+            switch result {
+            case .success(let urls):
+                guard let url = urls.first else { return }
+                Task {
+                    await viewModel.upload(fileURL: url)
+                }
+            case .failure(let error):
+                Task { viewModel.reportClientError(message: error.localizedDescription) }
+            }
+        }
+        .sheet(isPresented: $showingLinkSheet) {
+            PlaylistLinkSheet(
+                link: $playlistLink,
+                onCancel: {
+                    showingLinkSheet = false
+                },
+                onSubmit: { link in
+                    showingLinkSheet = false
+                    Task {
+                        await viewModel.process(input: link, returnJSON: true)
+                    }
+                }
+            )
+        }
+        .onChange(of: viewModel.status.message, {
+            showStatusBanner = true
+        })
     }
 }
 
@@ -283,6 +354,100 @@ struct OptionCard: View {
         .buttonStyle(.plain)
         .onHover { hovering in
             isHovering = hovering
+        }
+    }
+}
+
+struct StatusBannerView: View {
+    let status: MeridianViewModel.Status
+    let message: String
+    let onClose: () -> Void
+    
+    private var iconName: String {
+        switch status {
+        case .idle:
+            return "circle"
+        case .working:
+            return "hourglass"
+        case .success:
+            return "checkmark.circle.fill"
+        case .failure:
+            return "exclamationmark.triangle.fill"
+        }
+    }
+    
+    private var accentColor: Color {
+        switch status {
+        case .idle:
+            return .secondary
+        case .working:
+            return .accentColor
+        case .success:
+            return .green
+        case .failure:
+            return .red
+        }
+    }
+    
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: iconName)
+                .foregroundColor(accentColor)
+            Text(message)
+                .font(.callout)
+                .foregroundColor(.primary)
+                .lineLimit(3)
+            Spacer()
+            if status.isLoading {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            }
+            
+            Button(action: onClose) {
+                Image(systemName: "xmark.circle.fill")
+                    .imageScale(.large)
+                    .foregroundColor(.secondary)
+            }
+            .buttonStyle(.plain)
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color(NSColor.windowBackgroundColor))
+                .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
+        )
+    }
+}
+
+struct PlaylistLinkSheet: View {
+    @Binding var link: String
+    let onCancel: () -> Void
+    let onSubmit: (String) -> Void
+    
+    private var trimmedLink: String {
+        link.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Section("Playlist Link") {
+                    TextField("https://youtube.com/...", text: $link)
+                }
+            }
+            .frame(minWidth: 400, minHeight: 220)
+            .navigationTitle("Process Link")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", action: onCancel)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Process") {
+                        onSubmit(trimmedLink)
+                    }
+                    .disabled(trimmedLink.isEmpty)
+                }
+            }
         }
     }
 }
