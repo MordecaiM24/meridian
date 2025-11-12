@@ -43,13 +43,19 @@ final class MeridianViewModel: ObservableObject {
     @Published private(set) var experiences: [Experience] = []
 
     private let api: MeridianAPI
+    private let experienceStore: ExperienceStore
     private let decoder: JSONDecoder
 
-    init(api: MeridianAPI = MeridianAPI()) {
+    init(
+        api: MeridianAPI = MeridianAPI(),
+        experienceStore: ExperienceStore = ExperienceStore()
+    ) {
         self.api = api
+        self.experienceStore = experienceStore
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         self.decoder = decoder
+        loadPersistedExperiences()
     }
 
     func reset() {
@@ -59,6 +65,11 @@ final class MeridianViewModel: ObservableObject {
         whisperServerStatus = nil
         lastError = nil
         experiences = []
+        do {
+            try persistExperiences()
+        } catch {
+            status = .failure("Failed to clear saved experiences: \(error.localizedDescription)")
+        }
     }
 
     func ensureWhisperServer(port: Int = 8000, host: String = "0.0.0.0") async {
@@ -148,9 +159,29 @@ final class MeridianViewModel: ObservableObject {
         let experience = Experience(transcript: transcript, outputFile: response.outputFile)
         
         experiences.insert(experience, at: 0)
-        lastResult = response
-        lastError = nil
-        status = .success("Created experience \"\(experience.title)\"")
+
+        do {
+            try persistExperiences()
+            lastResult = response
+            lastError = nil
+            status = .success("Created experience \"\(experience.title)\"")
+        } catch {
+            lastResult = response
+            lastError = nil
+            status = .failure("Created experience but failed to save locally: \(error.localizedDescription)")
+        }
+    }
+
+    private func persistExperiences() throws {
+        try experienceStore.save(experiences)
+    }
+
+    private func loadPersistedExperiences() {
+        do {
+            experiences = try experienceStore.load()
+        } catch {
+            status = .failure("Failed to load saved experiences: \(error.localizedDescription)")
+        }
     }
 }
 

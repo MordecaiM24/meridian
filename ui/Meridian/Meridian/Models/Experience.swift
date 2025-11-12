@@ -1,6 +1,6 @@
 import Foundation
 
-struct Experience: Identifiable, Hashable {
+struct Experience: Identifiable, Hashable, Codable {
     let id: UUID
     let title: String
     let date: Date
@@ -9,18 +9,52 @@ struct Experience: Identifiable, Hashable {
     let transcript: CombinedTranscript
     let outputFile: String
 
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case date
+        case duration
+        case speakerCount
+        case transcript
+        case outputFile
+    }
+
     init(
+        id: UUID = UUID(),
         transcript: CombinedTranscript,
         outputFile: String,
         date: Date = Date()
     ) {
-        self.id = UUID()
+        self.id = id
         self.transcript = transcript
         self.outputFile = outputFile
         self.date = date
         self.title = Experience.makeTitle(from: transcript)
         self.duration = Experience.makeDuration(from: transcript)
         self.speakerCount = Experience.makeSpeakerCount(from: transcript)
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let decodedTranscript = try container.decode(CombinedTranscript.self, forKey: .transcript)
+        transcript = decodedTranscript
+        outputFile = try container.decode(String.self, forKey: .outputFile)
+        id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        date = try container.decodeIfPresent(Date.self, forKey: .date) ?? Date()
+        title = (try container.decodeIfPresent(String.self, forKey: .title)) ?? Experience.makeTitle(from: decodedTranscript)
+        duration = (try container.decodeIfPresent(String.self, forKey: .duration)) ?? Experience.makeDuration(from: decodedTranscript)
+        speakerCount = (try container.decodeIfPresent(Int.self, forKey: .speakerCount)) ?? Experience.makeSpeakerCount(from: decodedTranscript)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(title, forKey: .title)
+        try container.encode(date, forKey: .date)
+        try container.encode(duration, forKey: .duration)
+        try container.encode(speakerCount, forKey: .speakerCount)
+        try container.encode(transcript, forKey: .transcript)
+        try container.encode(outputFile, forKey: .outputFile)
     }
 }
 

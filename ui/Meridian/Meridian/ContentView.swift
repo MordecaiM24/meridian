@@ -425,7 +425,7 @@ struct PlaylistLinkSheet: View {
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack  {
             Form {
                 Section("Playlist Link") {
                     TextField("", text: $link)
