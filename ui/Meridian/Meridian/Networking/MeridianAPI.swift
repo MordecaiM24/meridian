@@ -63,7 +63,7 @@ public struct MeridianProcessRequest: Encodable {
         keepTemp: Bool = false,
         whisperPort: Int = 8000,
         noServer: Bool = false,
-        returnJSON: Bool = false
+        returnJSON: Bool = true
     ) {
         self.input = input
         self.output = output
@@ -103,7 +103,7 @@ public struct MeridianUploadOptions: Hashable {
         keepTemp: Bool = false,
         whisperPort: Int = 8000,
         noServer: Bool = false,
-        returnJSON: Bool = false
+        returnJSON: Bool = true
     ) {
         self.output = output
         self.speakers = speakers
@@ -208,13 +208,16 @@ public final class MeridianAPI {
     }
 
     public func process(_ requestBody: MeridianProcessRequest) async throws -> MeridianProcessResponse {
+        var mutableBody = requestBody
+        mutableBody.returnJSON = true
+
         var request = URLRequest(url: configuration.baseURL.appendingPathComponent("process"))
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 
         do {
-            request.httpBody = try encoder.encode(requestBody)
+            request.httpBody = try encoder.encode(mutableBody)
         } catch {
             throw MeridianAPIError.encoding(error)
         }
@@ -240,11 +243,14 @@ public final class MeridianAPI {
         let boundary = "Boundary-\(UUID().uuidString)"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
+        var mutableOptions = options
+        mutableOptions.returnJSON = true
+
         do {
             request.httpBody = try makeMultipartBody(
                 boundary: boundary,
                 fileURL: fileURL,
-                options: options
+                options: mutableOptions
             )
         } catch {
             throw error
@@ -358,6 +364,30 @@ public final class MeridianAPI {
             return preferred
         }
         return "application/octet-stream"
+    }
+}
+
+public extension JSONValue {
+    func encodedData(prettyPrinted: Bool = false) throws -> Data {
+        let encoder = JSONEncoder()
+        var formatting: JSONEncoder.OutputFormatting = [.withoutEscapingSlashes]
+        if prettyPrinted {
+            formatting.insert(.prettyPrinted)
+        }
+        encoder.outputFormatting = formatting
+        return try encoder.encode(self)
+    }
+
+    func string(prettyPrinted: Bool = false) throws -> String {
+        let data = try encodedData(prettyPrinted: prettyPrinted)
+        return String(decoding: data, as: UTF8.self)
+    }
+
+    func decode<T: Decodable>(
+        as type: T.Type,
+        decoder: JSONDecoder = JSONDecoder()
+    ) throws -> T {
+        return try decoder.decode(T.self, from: encodedData())
     }
 }
 

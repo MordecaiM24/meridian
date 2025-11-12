@@ -40,11 +40,16 @@ final class MeridianViewModel: ObservableObject {
     @Published private(set) var lastResult: MeridianProcessResponse?
     @Published private(set) var whisperServerStatus: WhisperServerResponse?
     @Published private(set) var lastError: MeridianAPIError?
+    @Published private(set) var experiences: [Experience] = []
 
     private let api: MeridianAPI
+    private let decoder: JSONDecoder
 
     init(api: MeridianAPI = MeridianAPI()) {
         self.api = api
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        self.decoder = decoder
     }
 
     func reset() {
@@ -53,6 +58,7 @@ final class MeridianViewModel: ObservableObject {
         lastResult = nil
         whisperServerStatus = nil
         lastError = nil
+        experiences = []
     }
 
     func ensureWhisperServer(port: Int = 8000, host: String = "0.0.0.0") async {
@@ -74,8 +80,7 @@ final class MeridianViewModel: ObservableObject {
         noDiarize: Bool = false,
         keepTemp: Bool = false,
         whisperPort: Int = 8000,
-        noServer: Bool = false,
-        returnJSON: Bool = false
+        noServer: Bool = false
     ) async {
         let request = MeridianProcessRequest(
             input: input,
@@ -85,7 +90,7 @@ final class MeridianViewModel: ObservableObject {
             keepTemp: keepTemp,
             whisperPort: whisperPort,
             noServer: noServer,
-            returnJSON: returnJSON
+            returnJSON: true
         )
         await process(request)
     }
@@ -95,9 +100,7 @@ final class MeridianViewModel: ObservableObject {
         lastProcessRequest = request
         do {
             let response = try await api.process(request)
-            lastResult = response
-            lastError = nil
-            status = .success("Created output at \(response.outputFile)")
+            try handleExperienceResponse(response)
         } catch {
             updateErrorState(with: error)
         }
@@ -106,10 +109,10 @@ final class MeridianViewModel: ObservableObject {
     func upload(fileURL: URL, options: MeridianUploadOptions = MeridianUploadOptions()) async {
         status = .working("Uploading \(fileURL.lastPathComponent)…")
         do {
-            let response = try await api.upload(fileURL: fileURL, options: options)
-            lastResult = response
-            lastError = nil
-            status = .success("Created output at \(response.outputFile)")
+            var mutableOptions = options
+            mutableOptions.returnJSON = true
+            let response = try await api.upload(fileURL: fileURL, options: mutableOptions)
+            try handleExperienceResponse(response)
         } catch {
             updateErrorState(with: error)
         }
@@ -129,6 +132,25 @@ final class MeridianViewModel: ObservableObject {
             lastError = transportError
             status = .failure(transportError.localizedDescription)
         }
+    }
+
+    private func handleExperienceResponse(_ response: MeridianProcessResponse) throws {
+        guard let dataValue = response.data else {
+            let error = NSError(
+                domain: "MeridianViewModel",
+                code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "Missing transcript data from server response."]
+            )
+            throw MeridianAPIError.decoding(error)
+        }
+
+        let transcript = try dataValue.decode(as: CombinedTranscript.self, decoder: decoder)
+        let experience = Experience(transcript: transcript, outputFile: response.outputFile)
+        
+        experiences.insert(experience, at: 0)
+        lastResult = response
+        lastError = nil
+        status = .success("Created experience \"\(experience.title)\"")
     }
 }
 

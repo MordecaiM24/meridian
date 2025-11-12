@@ -1,42 +1,33 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-// MARK: - Data Models
-struct Experience: Identifiable, Hashable {
-    let id = UUID()
-    let title: String
-    let date: Date
-    let duration: String?
-    let speakerCount: Int?
-    
-    static let mockData: [Experience] = [
-        Experience(title: "Team Meeting", date: Date().addingTimeInterval(-86400), duration: "45:23", speakerCount: 4),
-        Experience(title: "Podcast Episode", date: Date().addingTimeInterval(-172800), duration: "1:23:45", speakerCount: 2),
-        Experience(title: "Interview Recording", date: Date().addingTimeInterval(-259200), duration: "32:10", speakerCount: 2),
-        Experience(title: "Lecture Notes", date: Date().addingTimeInterval(-345600), duration: "1:45:00", speakerCount: 1)
-    ]
-}
-
-// MARK: - Main View
 struct MeridianView: View {
+    @StateObject private var viewModel = MeridianViewModel()
     @State private var selectedExperience: Experience?
     @State private var showingNewExperience = false
-    @State private var experiences = Experience.mockData
     
     var body: some View {
         NavigationSplitView {
             SidebarView(
                 selectedExperience: $selectedExperience,
                 showingNewExperience: $showingNewExperience,
-                experiences: experiences
+                experiences: viewModel.experiences
             )
         } detail: {
             if showingNewExperience {
-                NewExperienceView()
+                NewExperienceView(viewModel: viewModel, selection: $selectedExperience)
             } else if let experience = selectedExperience {
                 ExperienceDetailView(experience: experience)
             } else {
                 EmptyStateView()
+            }
+        }
+        .onChange(of: viewModel.experiences) { newExperiences in
+            if let latest = newExperiences.first {
+                selectedExperience = latest
+                showingNewExperience = false
+            } else {
+                selectedExperience = nil
             }
         }
     }
@@ -148,7 +139,8 @@ struct ExperienceRow: View {
 
 // MARK: - New Experience View
 struct NewExperienceView: View {
-    @StateObject private var viewModel = MeridianViewModel()
+    @ObservedObject var viewModel: MeridianViewModel
+    @Binding var selection: Experience?
     @State private var dragOver = false
     @State private var showingFileImporter = false
     @State private var showingLinkSheet = false
@@ -239,7 +231,7 @@ struct NewExperienceView: View {
                     let identifier = UTType.fileURL.identifier
                     provider.loadItem(forTypeIdentifier: identifier, options: nil) { item, error in
                         if let error {
-                            Task { await viewModel.reportClientError(message: error.localizedDescription) }
+                            Task { await MainActor.run { viewModel.reportClientError(message: error.localizedDescription) } }
                             return
                         }
                         let url: URL?
@@ -249,7 +241,7 @@ struct NewExperienceView: View {
                             url = item as? URL
                         }
                         guard let resolvedURL = url else {
-                            Task { await viewModel.reportClientError(message: "Unable to read dropped file.") }
+                            Task { await MainActor.run { viewModel.reportClientError(message: "Unable to read dropped file.") } }
                             return
                         }
                         Task {
@@ -281,7 +273,7 @@ struct NewExperienceView: View {
                     await viewModel.upload(fileURL: url)
                 }
             case .failure(let error):
-                Task { viewModel.reportClientError(message: error.localizedDescription) }
+                Task { await MainActor.run { viewModel.reportClientError(message: error.localizedDescription) } }
             }
         }
         .sheet(isPresented: $showingLinkSheet) {
@@ -293,14 +285,17 @@ struct NewExperienceView: View {
                 onSubmit: { link in
                     showingLinkSheet = false
                     Task {
-                        await viewModel.process(input: link, returnJSON: true)
+                        await viewModel.process(input: link)
                     }
                 }
             )
         }
-        .onChange(of: viewModel.status.message, {
+        .onChange(of: viewModel.status.message) { _ in
             showStatusBanner = true
-        })
+        }
+        .onChange(of: viewModel.experiences) { experiences in
+            selection = experiences.first
+        }
     }
 }
 
@@ -401,6 +396,7 @@ struct StatusBannerView: View {
             if status.isLoading {
                 ProgressView()
                     .progressViewStyle(.circular)
+                    .scaleEffect(0.5)
             }
             
             Button(action: onClose) {
@@ -457,19 +453,26 @@ struct ExperienceDetailView: View {
     let experience: Experience
     
     var body: some View {
-        VStack {
-            Text(experience.title)
-                .font(.largeTitle)
-                .fontWeight(.bold)
+        VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(experience.title)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Text("Created \(experience.date.formatted(date: .abbreviated, time: .shortened))")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
             
-            Text("Experience details will be shown here")
-                .foregroundColor(.secondary)
-                .padding()
+            Divider()
             
-            Spacer()
+            ScrollView {
+                Text(experience.outputFile)
+                    .font(.system(.body, design: .monospaced))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
         .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(Color(NSColor.controlBackgroundColor))
     }
 }
