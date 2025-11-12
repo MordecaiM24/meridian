@@ -22,7 +22,16 @@ struct MeridianView: View {
             if showingNewExperience {
                 NewExperienceView(viewModel: viewModel, selection: $selectedExperience)
             } else if let experience = selectedExperience {
-                ExperienceDetailView(experience: experience)
+                ExperienceDetailView(
+                    experience: experience,
+                    onRenameSpeaker: { speakerID, newName in
+                        viewModel.updateSpeakerName(
+                            for: experience.id,
+                            speakerID: speakerID,
+                            newName: newName
+                        )
+                    }
+                )
             } else {
                 EmptyStateView()
             }
@@ -55,12 +64,18 @@ struct MeridianView: View {
             )
         }
         .onChange(of: viewModel.experiences) { _, newExperiences in
-            if let latest = newExperiences.first {
-                selectedExperience = latest
-                showingNewExperience = false
-            } else {
+            guard !newExperiences.isEmpty else {
                 selectedExperience = nil
+                return
             }
+            
+            let currentSelectionID = selectedExperience?.id
+            let updatedSelection = currentSelectionID.flatMap { id in
+                newExperiences.first(where: { $0.id == id })
+            } ?? newExperiences.first
+            
+            selectedExperience = updatedSelection
+            showingNewExperience = false
         }
     }
     
@@ -514,32 +529,302 @@ struct PlaylistLinkSheet: View {
     }
 }
 
-// MARK: - Experience Detail View (Placeholder)
+// MARK: - Experience Detail View
 struct ExperienceDetailView: View {
     let experience: Experience
+    let onRenameSpeaker: (String, String) -> Void
+    
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                headerView
+                metadataView
+                TranscriptSection(
+                    transcript: experience.transcript,
+                    onRenameSpeaker: { speakerID, newName in
+                        onRenameSpeaker(speakerID, newName)
+                    }
+                )
+                if !experience.outputFile.isEmpty {
+                    OutputFileSection(outputFile: experience.outputFile)
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+        }
+        .background(Color(NSColor.controlBackgroundColor))
+    }
+    
+    private var headerView: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(experience.title)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            Text("Created \(experience.date.formatted(date: .abbreviated, time: .shortened))")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+        }
+    }
+    
+    @ViewBuilder
+    private var metadataView: some View {
+        if experience.duration != nil || experience.speakerCount != nil {
+            HStack(spacing: 12) {
+                if let duration = experience.duration {
+                    Label(duration, systemImage: "clock")
+                }
+                if let speakerCount = experience.speakerCount {
+                    Label(
+                        "\(speakerCount) speaker\(speakerCount == 1 ? "" : "s")",
+                        systemImage: speakerCount == 1 ? "person.fill" : "person.2.fill"
+                    )
+                }
+            }
+            .font(.subheadline)
+            .foregroundColor(.secondary)
+        }
+    }
+}
+
+private struct TranscriptSection: View {
+    let transcript: CombinedTranscript
+    let onRenameSpeaker: (String, String) -> Void
+    
+    @State private var editingSpeakerID: String?
+    @State private var editingName: String = ""
+    @FocusState private var focusedSpeakerID: String?
+    
+    private var speakerDisplayNames: [String: String] {
+        var resolved: [String: String] = [:]
+        if let speakers = transcript.speakers {
+            for (identifier, speaker) in speakers {
+                let candidates: [String?] = [
+                    speaker.name,
+                    speaker.label,
+                    speaker.metadata?["label"],
+                    speaker.metadata?["name"]
+                ]
+                if let match = candidates
+                    .compactMap({ $0?.trimmingCharacters(in: .whitespacesAndNewlines) })
+                    .first(where: { !$0.isEmpty }) {
+                    resolved[identifier] = match
+                }
+            }
+        }
+        
+        var fallbackIndex = 1
+        for segment in transcript.segments {
+            guard let speakerID = segment.speaker else { continue }
+            if resolved[speakerID] == nil {
+                resolved[speakerID] = "Speaker \(fallbackIndex)"
+                fallbackIndex += 1
+            }
+        }
+        
+        return resolved
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            VStack(alignment: .leading, spacing: 8) {
-                Text(experience.title)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text("Created \(experience.date.formatted(date: .abbreviated, time: .shortened))")
+            Text("Transcript")
+                .font(.title3)
+                .fontWeight(.semibold)
+            
+            if transcript.segments.isEmpty {
+                Text("Transcript is not available.")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-            }
-            
-            Divider()
-            
-            ScrollView {
-                Text(experience.outputFile)
-                    .font(.system(.body, design: .monospaced))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            } else {
+                LazyVStack(alignment: .leading, spacing: 12) {
+                    ForEach(transcript.segments) { segment in
+                        TranscriptSegmentRow(
+                            segment: segment,
+                            speakerID: segment.speaker,
+                            speakerName: speakerName(for: segment),
+                            isEditing: editingSpeakerID == segment.speaker,
+                            editingName: $editingName,
+                            focusedSpeakerID: $focusedSpeakerID,
+                            startEditing: {
+                                if let speakerID = segment.speaker {
+                                    startEditingSpeaker(speakerID: speakerID, currentName: speakerName(for: segment) ?? speakerID)
+                                }
+                            },
+                            commitEditing: commitEditing,
+                            cancelEditing: cancelEditing
+                        )
+                    }
+                }
             }
         }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(Color(NSColor.controlBackgroundColor))
+        .onChange(of: focusedSpeakerID) { newFocused in
+            guard let editingSpeakerID else { return }
+            if newFocused != editingSpeakerID {
+                cancelEditing()
+            }
+        }
+    }
+    
+    private func speakerName(for segment: CombinedTranscript.Segment) -> String? {
+        guard let speakerID = segment.speaker else {
+            return nil
+        }
+        return speakerDisplayNames[speakerID] ?? speakerID
+    }
+    
+    private func startEditingSpeaker(speakerID: String, currentName: String) {
+        editingSpeakerID = speakerID
+        editingName = currentName.trimmingCharacters(in: .whitespacesAndNewlines)
+        focusedSpeakerID = speakerID
+    }
+    
+    private func commitEditing() {
+        guard let speakerID = editingSpeakerID else { return }
+        let trimmed = editingName.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else {
+            cancelEditing()
+            return
+        }
+        onRenameSpeaker(speakerID, trimmed)
+        editingSpeakerID = nil
+        editingName = ""
+        focusedSpeakerID = nil
+    }
+    
+    private func cancelEditing() {
+        editingSpeakerID = nil
+        editingName = ""
+        focusedSpeakerID = nil
+    }
+}
+
+private struct TranscriptSegmentRow: View {
+    let segment: CombinedTranscript.Segment
+    let speakerID: String?
+    let speakerName: String?
+    let isEditing: Bool
+    @Binding var editingName: String
+    let focusedSpeakerID: FocusState<String?>.Binding
+    let startEditing: () -> Void
+    let commitEditing: () -> Void
+    let cancelEditing: () -> Void
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                if let displayName = resolvedSpeakerName {
+                    speakerHeader(displayName: displayName)
+                }
+                
+                Spacer()
+                
+                if let timeSummary = timeSummary {
+                    Text(timeSummary)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
+            
+            Text(segment.text)
+                .font(.body)
+                .foregroundColor(.primary)
+                .textSelection(.enabled)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(Color.secondary.opacity(0.08))
+        )
+    }
+    
+    @ViewBuilder
+    private func speakerHeader(displayName: String) -> some View {
+        if isEditing {
+            HStack(spacing: 8) {
+                TextField("Speaker name", text: $editingName)
+                    .textFieldStyle(.roundedBorder)
+                    .focused(focusedSpeakerID, equals: speakerID)
+                    .onSubmit {
+                        commitEditing()
+                    }
+                Button {
+                    commitEditing()
+                } label: {
+                    Image(systemName: "checkmark.circle.fill")
+                }
+                .buttonStyle(.borderless)
+                .keyboardShortcut(.return, modifiers: [])
+                
+                Button(role: .cancel) {
+                    cancelEditing()
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                }
+                .buttonStyle(.borderless)
+            }
+            .font(.headline)
+        } else {
+            Text(displayName)
+                .font(.headline)
+                .onTapGesture {
+                    startEditing()
+                }
+        }
+    }
+    
+    private var timeSummary: String? {
+        let startString = Self.formatTime(segment.start)
+        let endString = Self.formatTime(segment.end)
+        
+        switch (startString, endString) {
+        case let (start?, end?):
+            return "\(start) – \(end)"
+        case let (start?, nil):
+            return start
+        case let (nil, end?):
+            return end
+        default:
+            return nil
+        }
+    }
+    
+    private static func formatTime(_ value: Double?) -> String? {
+        guard let value else {
+            return nil
+        }
+        
+        let totalSeconds = Int(round(value))
+        let hours = totalSeconds / 3600
+        let minutes = (totalSeconds % 3600) / 60
+        let seconds = totalSeconds % 60
+        
+        if hours > 0 {
+            return String(format: "%d:%02d:%02d", hours, minutes, seconds)
+        } else {
+            return String(format: "%02d:%02d", minutes, seconds)
+        }
+    }
+    
+    private var resolvedSpeakerName: String? {
+        if let speakerName {
+            return speakerName
+        }
+        return speakerID
+    }
+}
+
+private struct OutputFileSection: View {
+    let outputFile: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Output File")
+                .font(.headline)
+            Text(outputFile)
+                .font(.system(.body, design: .monospaced))
+                .foregroundColor(.secondary)
+                .textSelection(.enabled)
+        }
     }
 }
 

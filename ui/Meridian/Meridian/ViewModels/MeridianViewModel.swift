@@ -154,6 +154,55 @@ final class MeridianViewModel: ObservableObject {
         }
     }
     
+    func updateSpeakerName(for experienceID: UUID, speakerID: String, newName rawName: String) {
+        let trimmedName = rawName.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedName.isEmpty else {
+            status = .failure("Speaker name cannot be empty.")
+            return
+        }
+        
+        guard let index = experiences.firstIndex(where: { $0.id == experienceID }) else {
+            status = .failure("Could not locate the experience to update.")
+            return
+        }
+        
+        let experience = experiences[index]
+        let transcript = experience.transcript
+        
+        var speakers = transcript.speakers ?? [:]
+        let existing = speakers[speakerID]
+        let updatedSpeaker = CombinedTranscript.Speaker(
+            id: speakerID,
+            name: trimmedName,
+            label: trimmedName,
+            metadata: existing?.metadata
+        )
+        speakers[speakerID] = updatedSpeaker
+        
+        let updatedTranscript = CombinedTranscript(
+            segments: transcript.segments,
+            speakers: speakers
+        )
+        
+        let updatedExperience = Experience(
+            id: experience.id,
+            transcript: updatedTranscript,
+            outputFile: experience.outputFile,
+            date: experience.date
+        )
+        
+        experiences[index] = updatedExperience
+        
+        do {
+            try persistExperiences()
+            lastError = nil
+            status = .success("Renamed speaker to \"\(trimmedName)\"")
+        } catch {
+            experiences[index] = experience
+            status = .failure("Updated speaker but failed to save: \(error.localizedDescription)")
+        }
+    }
+    
     private func updateErrorState(with error: Error) {
         if let apiError = error as? MeridianAPIError {
             lastError = apiError
