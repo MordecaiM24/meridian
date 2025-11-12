@@ -1,17 +1,22 @@
 import SwiftUI
 import UniformTypeIdentifiers
+import FoundationModels
 
 struct MeridianView: View {
     @StateObject private var viewModel = MeridianViewModel()
     @State private var selectedExperience: Experience?
     @State private var showingNewExperience = false
+    @State private var experiencePendingDeletion: Experience?
     
     var body: some View {
         NavigationSplitView {
             SidebarView(
                 selectedExperience: $selectedExperience,
                 showingNewExperience: $showingNewExperience,
-                experiences: viewModel.experiences
+                experiences: viewModel.experiences,
+                onDeleteExperience: { experience in
+                    experiencePendingDeletion = experience
+                }
             )
         } detail: {
             if showingNewExperience {
@@ -22,7 +27,34 @@ struct MeridianView: View {
                 EmptyStateView()
             }
         }
-        .onChange(of: viewModel.experiences) { newExperiences in
+        .toolbar {
+            if !showingNewExperience, let experience = selectedExperience {
+                ToolbarItem(placement: .primaryAction) {
+                    Button(role: .destructive) {
+                        experiencePendingDeletion = experience
+                    } label: {
+                        Label("Delete Experience", systemImage: "trash")
+                    }
+                    #if os(macOS)
+                    .help("Delete the selected experience")
+                    #endif
+                }
+            }
+        }
+        .alert(item: $experiencePendingDeletion) { experience in
+            Alert(
+                title: Text("Delete Experience?"),
+                message: Text("This will remove \"\(experience.title)\" from Meridian."),
+                primaryButton: .destructive(Text("Delete")) {
+                    handleDelete(experience)
+                    experiencePendingDeletion = nil
+                },
+                secondaryButton: .cancel {
+                    experiencePendingDeletion = nil
+                }
+            )
+        }
+        .onChange(of: viewModel.experiences) { _, newExperiences in
             if let latest = newExperiences.first {
                 selectedExperience = latest
                 showingNewExperience = false
@@ -31,6 +63,18 @@ struct MeridianView: View {
             }
         }
     }
+    
+    private func handleDelete(_ experience: Experience) {
+        let didDelete = viewModel.deleteExperience(experience)
+        guard didDelete else { return }
+        
+        if viewModel.experiences.isEmpty {
+            selectedExperience = nil
+        } else if selectedExperience?.id == experience.id {
+            selectedExperience = viewModel.experiences.first
+        }
+        showingNewExperience = false
+    }
 }
 
 // MARK: - Sidebar
@@ -38,6 +82,7 @@ struct SidebarView: View {
     @Binding var selectedExperience: Experience?
     @Binding var showingNewExperience: Bool
     let experiences: [Experience]
+    let onDeleteExperience: (Experience) -> Void
     
     var body: some View {
         List(selection: $selectedExperience) {
@@ -73,11 +118,32 @@ struct SidebarView: View {
                         selectedExperience = experience
                         showingNewExperience = false
                     }
+                    .contextMenu {
+                        Button(role: .destructive) {
+                            onDeleteExperience(experience)
+                        } label: {
+                            Label("Delete Experience", systemImage: "trash")
+                        }
+                    }
+                }
+                .onDelete { indexSet in
+                    guard let index = indexSet.first,
+                          experiences.indices.contains(index) else {
+                        return
+                    }
+                    onDeleteExperience(experiences[index])
                 }
             }
         }
         .navigationTitle("Meridian")
         .listStyle(SidebarListStyle())
+        #if os(macOS)
+        .onDeleteCommand {
+            if let selection = selectedExperience {
+                onDeleteExperience(selection)
+            }
+        }
+        #endif
     }
 }
 
@@ -290,10 +356,10 @@ struct NewExperienceView: View {
                 }
             )
         }
-        .onChange(of: viewModel.status.message) { _ in
+        .onChange(of: viewModel.status.message) { _, _ in
             showStatusBanner = true
         }
-        .onChange(of: viewModel.experiences) { experiences in
+        .onChange(of: viewModel.experiences) { _, experiences in
             selection = experiences.first
         }
     }

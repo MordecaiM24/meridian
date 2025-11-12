@@ -133,7 +133,27 @@ final class MeridianViewModel: ObservableObject {
         lastError = nil
         status = .failure(message)
     }
+    
+    @discardableResult
+    func deleteExperience(_ experience: Experience) -> Bool {
+        guard let index = experiences.firstIndex(where: { $0.id == experience.id }) else {
+            return false
+        }
 
+        let removedExperience = experiences.remove(at: index)
+
+        do {
+            try persistExperiences()
+            lastError = nil
+            status = .success("Deleted experience \"\(removedExperience.title)\"")
+            return true
+        } catch {
+            experiences.insert(removedExperience, at: index)
+            status = .failure("Failed to delete experience \"\(removedExperience.title)\": \(error.localizedDescription)")
+            return false
+        }
+    }
+    
     private func updateErrorState(with error: Error) {
         if let apiError = error as? MeridianAPIError {
             lastError = apiError
