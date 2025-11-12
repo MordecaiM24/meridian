@@ -425,10 +425,10 @@ struct PlaylistLinkSheet: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section("Playlist Link") {
-                    TextField("https://youtube.com/...", text: $link)
+                    TextField("", text: $link)
                 }
             }
             .frame(minWidth: 400, minHeight: 220)
