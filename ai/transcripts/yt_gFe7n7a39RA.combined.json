@@ -1,0 +1,5198 @@
+{
+  "metadata": {
+    "duration": 197.68,
+    "language": "english",
+    "original_text": "So this is a video on how absolutely anyone can vibe code Google Ads scripts nowadays, just with using ChatGPT. So I used to be really apprehensive about using scripts in Google Ads just because you have to add code, you have to add JavaScript. And I'm not a coder, I'm not technical at all. I don't know how to write a single line of code, but now with ChatGPT and Google Ads scripts, I can literally implement any script that I can dream of, run a few tests and get it working. So I'm just gonna show you how any scripts you can dream of. I have a blog post here, which has over 350 scripts, ones that I've found all over the internet from lots of different people. But the point of this is just to give you some ideas on what you can create. So I created a unique one, which I found really helpful, Google Ads, and it asks Google Ads to export all of the data from an ads account. So this is really helpful because you can take all that data into a spreadsheet like this, and you can actually upload this directly to ChatGPT or Clod or whatever your favorite AI tool is, and you can ask it questions about the data. And it has all of it sitting there in a spreadsheet, which means it's really easy for an AI tool to read that data. Come up with any script ideas, and if something's underperforming, you can create that script. That's actually a much more simpler script. And an RSA builder script, you could create that easily, write a script that looks at your account and comes up with like drawing RSA. So literally the sky's the limit, use your imagination. I'm just gonna show you how to do it. So all you have to do in ChatGPT is just tell it your idea. Yeah, I want you to create a Google Ad script, which accomplishes this. I had to run like three or four tests on Google Ads, and you will get a notification. So here on Google Ads, all you do is just go to the scripts, new script, and you just copy and paste the exact code that ChatGPT gives you, and then you run the script. It's incredibly easy. Scripts make changes on a user's behalf. You have to authorize it. But once you've added your script, you just run it, where it's pulling a huge amount of data from your ads account and putting it into a spreadsheet. It's probably gonna take like five minutes to run, but a standard script will run very quickly, and you'll get a debugging error. When you test this, you just put the error message directly into ChatGPT like this. Again, I have no coding experience. I'm just copying and pasting. Got this error, copied and pasted it, and it said, ah, I've got it. This is a classic timeout and set of instructions. I'll send you the message a few minutes later. And it finally gave me a script, not one of the most complex tasks you'd think of, which is exporting almost all of the account data into a spreadsheet, and it worked. Pull all this data myself, and it would have been a real pain to do all of this manually. You can vibe code absolutely anything now with ChatGPT, and Act is your own personal coder and script assistant. I do have a blog post, PPCW, in the description, and it has just a link to a big list of potential Google Ad scripts that you can see. I put a note on the ones that I am trying to look for a replacement for. Like, this one isn't working. This is from Brain Labs. Identify and automatically fill ad groups without ad. You can just go to ChatGPT and ask ChatGPT to create that for you. You need no coding knowledge. I don't have the first real clue about coding, but it works. Google Ad scripts just with ChatGPT or Clod."
+  },
+  "speakers": {
+    "SPEAKER_00": {
+      "label": "speaker_00",
+      "color": null
+    }
+  },
+  "segments": [
+    {
+      "id": 0,
+      "speaker": "SPEAKER_00",
+      "start": 0.0,
+      "end": 197.68,
+      "text": " So this is a video on how absolutely anyone  can vibe code Google Ads scripts nowadays,  just with using ChatGPT.  So I used to be really apprehensive about using scripts  in Google Ads just because you have to add code,  you have to add JavaScript.  And I'm not a coder, I'm not technical at all.  I don't know how to write a single line of code,  but now with ChatGPT and Google Ads scripts,  I can literally implement any script that I can dream of,  run a few tests and get it working.  So I'm just gonna show you  how any scripts you can dream of.  I have a blog post here, which has over 350 scripts,  ones that I've found all over the internet  from lots of different people.  But the point of this is just to give you some ideas  on what you can create.  So I created a unique one,  which I found really helpful, Google Ads,  and it asks Google Ads to export all of the data  from an ads account.  So this is really helpful because you can take all that data  into a spreadsheet like this,  and you can actually upload this directly to ChatGPT or Clod  or whatever your favorite AI tool is,  and you can ask it questions about the data.  And it has all of it sitting there in a spreadsheet,  which means it's really easy for an AI tool  to read that data.  Come up with any script ideas,  and if something's underperforming,  you can create that script.  That's actually a much more simpler script.  And an RSA builder script, you could create that easily,  write a script that looks at your account  and comes up with like drawing RSA.  So literally the sky's the limit, use your imagination.  I'm just gonna show you how to do it.  So all you have to do in ChatGPT is just tell it your idea.  Yeah, I want you to create a Google Ad script,  which accomplishes this.  I had to run like three or four tests on Google Ads,  and you will get a notification.  So here on Google Ads,  all you do is just go to the scripts, new script,  and you just copy and paste the exact code  that ChatGPT gives you, and then you run the script.  It's incredibly easy.  Scripts make changes on a user's behalf.  You have to authorize it.  But once you've added your script, you just run it,  where it's pulling a huge amount of data  from your ads account and putting it into a spreadsheet.  It's probably gonna take like five minutes to run,  but a standard script will run very quickly,  and you'll get a debugging error.  When you test this, you just put the error message  directly into ChatGPT like this.  Again, I have no coding experience.  I'm just copying and pasting.  Got this error, copied and pasted it,  and it said, ah, I've got it.  This is a classic timeout and set of instructions.  I'll send you the message a few minutes later.  And it finally gave me a script,  not one of the most complex tasks you'd think of,  which is exporting almost all of the account data  into a spreadsheet, and it worked.  Pull all this data myself, and it would have been  a real pain to do all of this manually.  You can vibe code absolutely anything now with ChatGPT,  and Act is your own personal coder and script assistant.  I do have a blog post, PPCW, in the description,  and it has just a link to a big list  of potential Google Ad scripts that you can see.  I put a note on the ones that I am trying  to look for a replacement for.  Like, this one isn't working.  This is from Brain Labs.  Identify and automatically fill ad groups without ad.  You can just go to ChatGPT and ask ChatGPT  to create that for you.  You need no coding knowledge.  I don't have the first real clue about coding,  but it works.  Google Ad scripts just with ChatGPT or Clod.",
+      "tokens": [
+        50363,
+        1406,
+        428,
+        318,
+        257,
+        2008,
+        319,
+        703,
+        5543,
+        2687,
+        50527,
+        460,
+        27426,
+        2438,
+        3012,
+        47442,
+        14750,
+        26760,
+        11,
+        50697,
+        655,
+        351,
+        1262,
+        24101,
+        38,
+        11571,
+        13,
+        50765,
+        1406,
+        314,
+        973,
+        284,
+        307,
+        1107,
+        31887,
+        425,
+        546,
+        1262,
+        14750,
+        50961,
+        287,
+        3012,
+        47442,
+        655,
+        780,
+        345,
+        423,
+        284,
+        751,
+        2438,
+        11,
+        51093,
+        345,
+        423,
+        284,
+        751,
+        11933,
+        13,
+        51149,
+        843,
+        314,
+        1101,
+        407,
+        257,
+        269,
+        12342,
+        11,
+        314,
+        1101,
+        407,
+        6276,
+        379,
+        477,
+        13,
+        51320,
+        314,
+        836,
+        470,
+        760,
+        703,
+        284,
+        3551,
+        257,
+        2060,
+        1627,
+        286,
+        2438,
+        11,
+        51449,
+        475,
+        783,
+        351,
+        24101,
+        38,
+        11571,
+        290,
+        3012,
+        47442,
+        14750,
+        11,
+        51591,
+        314,
+        460,
+        7360,
+        3494,
+        597,
+        4226,
+        326,
+        314,
+        460,
+        4320,
+        286,
+        11,
+        51777,
+        1057,
+        257,
+        1178,
+        5254,
+        290,
+        651,
+        340,
+        1762,
+        13,
+        51859,
+        50363,
+        1406,
+        314,
+        1101,
+        655,
+        8066,
+        905,
+        345,
+        50419,
+        703,
+        597,
+        14750,
+        345,
+        460,
+        4320,
+        286,
+        13,
+        50541,
+        314,
+        423,
+        257,
+        4130,
+        1281,
+        994,
+        11,
+        543,
+        468,
+        625,
+        13803,
+        14750,
+        11,
+        50711,
+        3392,
+        326,
+        314,
+        1053,
+        1043,
+        477,
+        625,
+        262,
+        5230,
+        50834,
+        422,
+        6041,
+        286,
+        1180,
+        661,
+        13,
+        50929,
+        887,
+        262,
+        966,
+        286,
+        428,
+        318,
+        655,
+        284,
+        1577,
+        345,
+        617,
+        4213,
+        51071,
+        319,
+        644,
+        345,
+        460,
+        2251,
+        13,
+        51134,
+        1406,
+        314,
+        2727,
+        257,
+        3748,
+        530,
+        11,
+        51201,
+        543,
+        314,
+        1043,
+        1107,
+        7613,
+        11,
+        3012,
+        47442,
+        11,
+        51333,
+        290,
+        340,
+        7893,
+        3012,
+        47442,
+        284,
+        10784,
+        477,
+        286,
+        262,
+        1366,
+        51521,
+        422,
+        281,
+        9011,
+        1848,
+        13,
+        51585,
+        1406,
+        428,
+        318,
+        1107,
+        7613,
+        780,
+        345,
+        460,
+        1011,
+        477,
+        326,
+        1366,
+        51715,
+        656,
+        257,
+        30117,
+        588,
+        428,
+        11,
+        51791,
+        50363,
+        290,
+        345,
+        460,
+        1682,
+        9516,
+        428,
+        3264,
+        284,
+        24101,
+        38,
+        11571,
+        393,
+        1012,
+        375,
+        50565,
+        393,
+        4232,
+        534,
+        4004,
+        9552,
+        2891,
+        318,
+        11,
+        50675,
+        290,
+        345,
+        460,
+        1265,
+        340,
+        2683,
+        546,
+        262,
+        1366,
+        13,
+        50794,
+        843,
+        340,
+        468,
+        477,
+        286,
+        340,
+        5586,
+        612,
+        287,
+        257,
+        30117,
+        11,
+        50905,
+        543,
+        1724,
+        340,
+        338,
+        1107,
+        2562,
+        329,
+        281,
+        9552,
+        2891,
+        51021,
+        284,
+        1100,
+        326,
+        1366,
+        13,
+        51063,
+        7911,
+        510,
+        351,
+        597,
+        4226,
+        4213,
+        11,
+        51155,
+        290,
+        611,
+        1223,
+        338,
+        739,
+        37440,
+        11,
+        51231,
+        345,
+        460,
+        2251,
+        326,
+        4226,
+        13,
+        51287,
+        1320,
+        338,
+        1682,
+        257,
+        881,
+        517,
+        18599,
+        4226,
+        13,
+        51401,
+        843,
+        281,
+        42319,
+        27098,
+        4226,
+        11,
+        345,
+        714,
+        2251,
+        326,
+        3538,
+        11,
+        51593,
+        3551,
+        257,
+        4226,
+        326,
+        3073,
+        379,
+        534,
+        1848,
+        51725,
+        290,
+        2058,
+        510,
+        351,
+        588,
+        8263,
+        42319,
+        13,
+        51829,
+        50363,
+        1406,
+        7360,
+        262,
+        6766,
+        338,
+        262,
+        4179,
+        11,
+        779,
+        534,
+        13843,
+        13,
+        50531,
+        314,
+        1101,
+        655,
+        8066,
+        905,
+        345,
+        703,
+        284,
+        466,
+        340,
+        13,
+        50583,
+        1406,
+        477,
+        345,
+        423,
+        284,
+        466,
+        287,
+        24101,
+        38,
+        11571,
+        318,
+        655,
+        1560,
+        340,
+        534,
+        2126,
+        13,
+        50765,
+        9425,
+        11,
+        314,
+        765,
+        345,
+        284,
+        2251,
+        257,
+        3012,
+        1215,
+        4226,
+        11,
+        50893,
+        543,
+        6424,
+        5614,
+        428,
+        13,
+        50983,
+        314,
+        550,
+        284,
+        1057,
+        588,
+        1115,
+        393,
+        1440,
+        5254,
+        319,
+        3012,
+        47442,
+        11,
+        51141,
+        290,
+        345,
+        481,
+        651,
+        257,
+        14483,
+        13,
+        51208,
+        1406,
+        994,
+        319,
+        3012,
+        47442,
+        11,
+        51275,
+        477,
+        345,
+        466,
+        318,
+        655,
+        467,
+        284,
+        262,
+        14750,
+        11,
+        649,
+        4226,
+        11,
+        51453,
+        290,
+        345,
+        655,
+        4866,
+        290,
+        17008,
+        262,
+        2748,
+        2438,
+        51615,
+        326,
+        24101,
+        38,
+        11571,
+        3607,
+        345,
+        11,
+        290,
+        788,
+        345,
+        1057,
+        262,
+        4226,
+        13,
+        51731,
+        632,
+        338,
+        8131,
+        2562,
+        13,
+        51795,
+        50363,
+        12327,
+        82,
+        787,
+        2458,
+        319,
+        257,
+        2836,
+        338,
+        8378,
+        13,
+        50463,
+        921,
+        423,
+        284,
+        29145,
+        340,
+        13,
+        50529,
+        887,
+        1752,
+        345,
+        1053,
+        2087,
+        534,
+        4226,
+        11,
+        345,
+        655,
+        1057,
+        340,
+        11,
+        50630,
+        810,
+        340,
+        338,
+        10427,
+        257,
+        3236,
+        2033,
+        286,
+        1366,
+        50782,
+        422,
+        534,
+        9011,
+        1848,
+        290,
+        5137,
+        340,
+        656,
+        257,
+        30117,
+        13,
+        50893,
+        632,
+        338,
+        2192,
+        8066,
+        1011,
+        588,
+        1936,
+        2431,
+        284,
+        1057,
+        11,
+        50985,
+        475,
+        257,
+        3210,
+        4226,
+        481,
+        1057,
+        845,
+        2952,
+        11,
+        51111,
+        290,
+        345,
+        1183,
+        651,
+        257,
+        28769,
+        4049,
+        13,
+        51195,
+        1649,
+        345,
+        1332,
+        428,
+        11,
+        345,
+        655,
+        1234,
+        262,
+        4049,
+        3275,
+        51317,
+        3264,
+        656,
+        24101,
+        38,
+        11571,
+        588,
+        428,
+        13,
+        51419,
+        6521,
+        11,
+        314,
+        423,
+        645,
+        19617,
+        1998,
+        13,
+        51500,
+        314,
+        1101,
+        655,
+        23345,
+        290,
+        1613,
+        278,
+        13,
+        51557,
+        11853,
+        428,
+        4049,
+        11,
+        18984,
+        290,
+        1613,
+        276,
+        340,
+        11,
+        51643,
+        290,
+        340,
+        531,
+        11,
+        29042,
+        11,
+        314,
+        1053,
+        1392,
+        340,
+        13,
+        51703,
+        770,
+        318,
+        257,
+        6833,
+        26827,
+        290,
+        900,
+        286,
+        7729,
+        13,
+        51841,
+        50363,
+        314,
+        1183,
+        3758,
+        345,
+        262,
+        3275,
+        257,
+        1178,
+        2431,
+        1568,
+        13,
+        50415,
+        843,
+        340,
+        3443,
+        2921,
+        502,
+        257,
+        4226,
+        11,
+        50495,
+        407,
+        530,
+        286,
+        262,
+        749,
+        3716,
+        8861,
+        345,
+        1549,
+        892,
+        286,
+        11,
+        50599,
+        543,
+        318,
+        39133,
+        2048,
+        477,
+        286,
+        262,
+        1848,
+        1366,
+        50761,
+        656,
+        257,
+        30117,
+        11,
+        290,
+        340,
+        3111,
+        13,
+        50867,
+        21429,
+        477,
+        428,
+        1366,
+        3589,
+        11,
+        290,
+        340,
+        561,
+        423,
+        587,
+        50971,
+        257,
+        1103,
+        2356,
+        284,
+        466,
+        477,
+        286,
+        428,
+        14500,
+        13,
+        51071,
+        921,
+        460,
+        27426,
+        2438,
+        5543,
+        1997,
+        783,
+        351,
+        24101,
+        38,
+        11571,
+        11,
+        51235,
+        290,
+        2191,
+        318,
+        534,
+        898,
+        2614,
+        269,
+        12342,
+        290,
+        4226,
+        8796,
+        13,
+        51415,
+        314,
+        466,
+        423,
+        257,
+        4130,
+        1281,
+        11,
+        350,
+        5662,
+        54,
+        11,
+        287,
+        262,
+        6764,
+        11,
+        51577,
+        290,
+        340,
+        468,
+        655,
+        257,
+        2792,
+        284,
+        257,
+        1263,
+        1351,
+        51684,
+        286,
+        2785,
+        3012,
+        1215,
+        14750,
+        326,
+        345,
+        460,
+        766,
+        13,
+        51837,
+        50363,
+        314,
+        1234,
+        257,
+        3465,
+        319,
+        262,
+        3392,
+        326,
+        314,
+        716,
+        2111,
+        50519,
+        284,
+        804,
+        329,
+        257,
+        9014,
+        329,
+        13,
+        50595,
+        4525,
+        11,
+        428,
+        530,
+        2125,
+        470,
+        1762,
+        13,
+        50661,
+        770,
+        318,
+        422,
+        14842,
+        23500,
+        13,
+        50741,
+        11440,
+        1958,
+        290,
+        6338,
+        6070,
+        512,
+        2628,
+        1231,
+        512,
+        13,
+        50916,
+        921,
+        460,
+        655,
+        467,
+        284,
+        24101,
+        38,
+        11571,
+        290,
+        1265,
+        24101,
+        38,
+        11571,
+        51053,
+        284,
+        2251,
+        326,
+        329,
+        345,
+        13,
+        51103,
+        921,
+        761,
+        645,
+        19617,
+        3725,
+        13,
+        51187,
+        314,
+        836,
+        470,
+        423,
+        262,
+        717,
+        1103,
+        18437,
+        546,
+        19617,
+        11,
+        51327,
+        475,
+        340,
+        2499,
+        13,
+        51369,
+        3012,
+        1215,
+        14750,
+        655,
+        351,
+        24101,
+        38,
+        11571,
+        393,
+        1012,
+        375,
+        13,
+        51473
+      ],
+      "confidence": 1.0,
+      "avg_logprob": -0.3,
+      "no_speech_prob": 0.01,
+      "whisper_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "start": 29.511593750000003,
+      "end": 29.84909375,
+      "speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ]
+    },
+    {
+      "start": 91.22346875000001,
+      "end": 91.67909375,
+      "speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ]
+    }
+  ],
+  "words": [
+    {
+      "end": 0.18,
+      "start": 0.06,
+      "word": "So"
+    },
+    {
+      "end": 0.54,
+      "start": 0.18,
+      "word": "this"
+    },
+    {
+      "end": 0.71,
+      "start": 0.54,
+      "word": "is"
+    },
+    {
+      "end": 0.81,
+      "start": 0.72,
+      "word": "a"
+    },
+    {
+      "end": 1.26,
+      "start": 0.81,
+      "word": "video"
+    },
+    {
+      "end": 1.42,
+      "start": 1.26,
+      "word": "on"
+    },
+    {
+      "end": 1.7,
+      "start": 1.44,
+      "word": "how"
+    },
+    {
+      "end": 2.45,
+      "start": 1.71,
+      "word": "absolutely"
+    },
+    {
+      "end": 3.17,
+      "start": 2.64,
+      "word": "anyone"
+    },
+    {
+      "end": 3.51,
+      "start": 3.32,
+      "word": "can"
+    },
+    {
+      "end": 3.91,
+      "start": 3.56,
+      "word": "vibe"
+    },
+    {
+      "end": 4.25,
+      "start": 3.91,
+      "word": "code"
+    },
+    {
+      "end": 4.81,
+      "start": 4.28,
+      "word": "Google"
+    },
+    {
+      "end": 5.08,
+      "start": 4.81,
+      "word": "Ads"
+    },
+    {
+      "end": 5.64,
+      "start": 5.08,
+      "word": "scripts"
+    },
+    {
+      "end": 6.36,
+      "start": 5.73,
+      "word": "nowadays"
+    },
+    {
+      "end": 6.68,
+      "start": 6.68,
+      "word": ","
+    },
+    {
+      "end": 6.91,
+      "start": 6.69,
+      "word": "just"
+    },
+    {
+      "end": 7.14,
+      "start": 6.91,
+      "word": "with"
+    },
+    {
+      "end": 7.43,
+      "start": 7.14,
+      "word": "using"
+    },
+    {
+      "end": 7.66,
+      "start": 7.43,
+      "word": "Chat"
+    },
+    {
+      "end": 7.71,
+      "start": 7.66,
+      "word": "G"
+    },
+    {
+      "end": 7.82,
+      "start": 7.71,
+      "word": "PT"
+    },
+    {
+      "end": 8.0,
+      "start": 7.86,
+      "word": "."
+    },
+    {
+      "end": 8.27,
+      "start": 8.13,
+      "word": "So"
+    },
+    {
+      "end": 8.37,
+      "start": 8.27,
+      "word": "I"
+    },
+    {
+      "end": 8.85,
+      "start": 8.38,
+      "word": "used"
+    },
+    {
+      "end": 9.08,
+      "start": 8.85,
+      "word": "to"
+    },
+    {
+      "end": 9.3,
+      "start": 9.08,
+      "word": "be"
+    },
+    {
+      "end": 9.83,
+      "start": 9.3,
+      "word": "really"
+    },
+    {
+      "end": 10.58,
+      "start": 10.05,
+      "word": "apprehens"
+    },
+    {
+      "end": 10.76,
+      "start": 10.58,
+      "word": "ive"
+    },
+    {
+      "end": 11.0,
+      "start": 10.76,
+      "word": "about"
+    },
+    {
+      "end": 11.39,
+      "start": 11.0,
+      "word": "using"
+    },
+    {
+      "end": 11.86,
+      "start": 11.39,
+      "word": "scripts"
+    },
+    {
+      "end": 12.09,
+      "start": 11.97,
+      "word": "in"
+    },
+    {
+      "end": 12.48,
+      "start": 12.09,
+      "word": "Google"
+    },
+    {
+      "end": 12.63,
+      "start": 12.48,
+      "word": "Ads"
+    },
+    {
+      "end": 12.93,
+      "start": 12.69,
+      "word": "just"
+    },
+    {
+      "end": 13.39,
+      "start": 12.93,
+      "word": "because"
+    },
+    {
+      "end": 13.58,
+      "start": 13.39,
+      "word": "you"
+    },
+    {
+      "end": 13.82,
+      "start": 13.58,
+      "word": "have"
+    },
+    {
+      "end": 13.97,
+      "start": 13.94,
+      "word": "to"
+    },
+    {
+      "end": 14.16,
+      "start": 13.97,
+      "word": "add"
+    },
+    {
+      "end": 14.42,
+      "start": 14.16,
+      "word": "code"
+    },
+    {
+      "end": 14.6,
+      "start": 14.42,
+      "word": ","
+    },
+    {
+      "end": 14.75,
+      "start": 14.6,
+      "word": "you"
+    },
+    {
+      "end": 14.95,
+      "start": 14.75,
+      "word": "have"
+    },
+    {
+      "end": 15.05,
+      "start": 14.95,
+      "word": "to"
+    },
+    {
+      "end": 15.2,
+      "start": 15.05,
+      "word": "add"
+    },
+    {
+      "end": 15.72,
+      "start": 15.2,
+      "word": "JavaScript"
+    },
+    {
+      "end": 15.72,
+      "start": 15.72,
+      "word": "."
+    },
+    {
+      "end": 15.95,
+      "start": 15.72,
+      "word": "And"
+    },
+    {
+      "end": 16.02,
+      "start": 15.95,
+      "word": "I"
+    },
+    {
+      "end": 16.09,
+      "start": 16.02,
+      "word": "'m"
+    },
+    {
+      "end": 16.4,
+      "start": 16.28,
+      "word": "not"
+    },
+    {
+      "end": 16.47,
+      "start": 16.4,
+      "word": "a"
+    },
+    {
+      "end": 16.54,
+      "start": 16.47,
+      "word": "c"
+    },
+    {
+      "end": 16.84,
+      "start": 16.54,
+      "word": "oder"
+    },
+    {
+      "end": 17.04,
+      "start": 16.84,
+      "word": ","
+    },
+    {
+      "end": 17.13,
+      "start": 17.04,
+      "word": "I"
+    },
+    {
+      "end": 17.2,
+      "start": 17.13,
+      "word": "'m"
+    },
+    {
+      "end": 17.54,
+      "start": 17.32,
+      "word": "not"
+    },
+    {
+      "end": 18.39,
+      "start": 17.62,
+      "word": "technical"
+    },
+    {
+      "end": 18.43,
+      "start": 18.39,
+      "word": "at"
+    },
+    {
+      "end": 18.85,
+      "start": 18.85,
+      "word": "all"
+    },
+    {
+      "end": 19.07,
+      "start": 18.87,
+      "word": "."
+    },
+    {
+      "end": 19.21,
+      "start": 19.14,
+      "word": "I"
+    },
+    {
+      "end": 19.41,
+      "start": 19.21,
+      "word": "don"
+    },
+    {
+      "end": 19.54,
+      "start": 19.41,
+      "word": "'t"
+    },
+    {
+      "end": 19.81,
+      "start": 19.54,
+      "word": "know"
+    },
+    {
+      "end": 20.01,
+      "start": 19.81,
+      "word": "how"
+    },
+    {
+      "end": 20.14,
+      "start": 20.01,
+      "word": "to"
+    },
+    {
+      "end": 20.23,
+      "start": 20.14,
+      "word": "write"
+    },
+    {
+      "end": 20.55,
+      "start": 20.51,
+      "word": "a"
+    },
+    {
+      "end": 20.95,
+      "start": 20.55,
+      "word": "single"
+    },
+    {
+      "end": 21.23,
+      "start": 20.96,
+      "word": "line"
+    },
+    {
+      "end": 21.31,
+      "start": 21.23,
+      "word": "of"
+    },
+    {
+      "end": 21.63,
+      "start": 21.41,
+      "word": "code"
+    },
+    {
+      "end": 21.72,
+      "start": 21.72,
+      "word": ","
+    },
+    {
+      "end": 21.95,
+      "start": 21.74,
+      "word": "but"
+    },
+    {
+      "end": 22.18,
+      "start": 21.95,
+      "word": "now"
+    },
+    {
+      "end": 22.48,
+      "start": 22.18,
+      "word": "with"
+    },
+    {
+      "end": 22.8,
+      "start": 22.48,
+      "word": "Chat"
+    },
+    {
+      "end": 22.87,
+      "start": 22.8,
+      "word": "G"
+    },
+    {
+      "end": 22.99,
+      "start": 22.87,
+      "word": "PT"
+    },
+    {
+      "end": 23.25,
+      "start": 23.02,
+      "word": "and"
+    },
+    {
+      "end": 23.71,
+      "start": 23.25,
+      "word": "Google"
+    },
+    {
+      "end": 23.94,
+      "start": 23.72,
+      "word": "Ads"
+    },
+    {
+      "end": 24.5,
+      "start": 23.99,
+      "word": "scripts"
+    },
+    {
+      "end": 24.56,
+      "start": 24.56,
+      "word": ","
+    },
+    {
+      "end": 24.64,
+      "start": 24.56,
+      "word": "I"
+    },
+    {
+      "end": 24.88,
+      "start": 24.64,
+      "word": "can"
+    },
+    {
+      "end": 25.62,
+      "start": 24.88,
+      "word": "literally"
+    },
+    {
+      "end": 26.27,
+      "start": 25.62,
+      "word": "implement"
+    },
+    {
+      "end": 26.6,
+      "start": 26.42,
+      "word": "any"
+    },
+    {
+      "end": 26.93,
+      "start": 26.6,
+      "word": "script"
+    },
+    {
+      "end": 27.39,
+      "start": 27.12,
+      "word": "that"
+    },
+    {
+      "end": 27.45,
+      "start": 27.39,
+      "word": "I"
+    },
+    {
+      "end": 27.65,
+      "start": 27.45,
+      "word": "can"
+    },
+    {
+      "end": 27.88,
+      "start": 27.65,
+      "word": "dream"
+    },
+    {
+      "end": 28.12,
+      "start": 27.88,
+      "word": "of"
+    },
+    {
+      "end": 28.28,
+      "start": 28.28,
+      "word": ","
+    },
+    {
+      "end": 28.44,
+      "start": 28.3,
+      "word": "run"
+    },
+    {
+      "end": 28.48,
+      "start": 28.44,
+      "word": "a"
+    },
+    {
+      "end": 28.65,
+      "start": 28.57,
+      "word": "few"
+    },
+    {
+      "end": 28.92,
+      "start": 28.65,
+      "word": "tests"
+    },
+    {
+      "end": 29.06,
+      "start": 28.92,
+      "word": "and"
+    },
+    {
+      "end": 29.24,
+      "start": 29.06,
+      "word": "get"
+    },
+    {
+      "end": 29.33,
+      "start": 29.24,
+      "word": "it"
+    },
+    {
+      "end": 29.7,
+      "start": 29.34,
+      "word": "working"
+    },
+    {
+      "end": 29.92,
+      "start": 29.75,
+      "word": "."
+    },
+    {
+      "end": 30.01,
+      "start": 29.92,
+      "word": "So"
+    },
+    {
+      "end": 30.07,
+      "start": 30.02,
+      "word": "I"
+    },
+    {
+      "end": 30.17,
+      "start": 30.07,
+      "word": "'m"
+    },
+    {
+      "end": 30.37,
+      "start": 30.17,
+      "word": "just"
+    },
+    {
+      "end": 30.63,
+      "start": 30.37,
+      "word": "gonna"
+    },
+    {
+      "end": 30.85,
+      "start": 30.64,
+      "word": "show"
+    },
+    {
+      "end": 31.02,
+      "start": 30.85,
+      "word": "you"
+    },
+    {
+      "end": 31.28,
+      "start": 31.04,
+      "word": "how"
+    },
+    {
+      "end": 31.43,
+      "start": 31.28,
+      "word": "any"
+    },
+    {
+      "end": 32.07,
+      "start": 31.53,
+      "word": "scripts"
+    },
+    {
+      "end": 32.31,
+      "start": 32.07,
+      "word": "you"
+    },
+    {
+      "end": 32.55,
+      "start": 32.31,
+      "word": "can"
+    },
+    {
+      "end": 32.68,
+      "start": 32.55,
+      "word": "dream"
+    },
+    {
+      "end": 33.05,
+      "start": 32.96,
+      "word": "of"
+    },
+    {
+      "end": 33.48,
+      "start": 33.13,
+      "word": "."
+    },
+    {
+      "end": 33.53,
+      "start": 33.48,
+      "word": "I"
+    },
+    {
+      "end": 33.76,
+      "start": 33.53,
+      "word": "have"
+    },
+    {
+      "end": 33.77,
+      "start": 33.76,
+      "word": "a"
+    },
+    {
+      "end": 33.99,
+      "start": 33.85,
+      "word": "blog"
+    },
+    {
+      "end": 34.22,
+      "start": 34.06,
+      "word": "post"
+    },
+    {
+      "end": 34.52,
+      "start": 34.27,
+      "word": "here"
+    },
+    {
+      "end": 34.61,
+      "start": 34.52,
+      "word": ","
+    },
+    {
+      "end": 35.02,
+      "start": 34.66,
+      "word": "which"
+    },
+    {
+      "end": 35.15,
+      "start": 35.02,
+      "word": "has"
+    },
+    {
+      "end": 35.5,
+      "start": 35.27,
+      "word": "over"
+    },
+    {
+      "end": 36.14,
+      "start": 35.56,
+      "word": "350"
+    },
+    {
+      "end": 36.7,
+      "start": 36.25,
+      "word": "scripts"
+    },
+    {
+      "end": 36.88,
+      "start": 36.7,
+      "word": ","
+    },
+    {
+      "end": 37.16,
+      "start": 36.88,
+      "word": "ones"
+    },
+    {
+      "end": 37.33,
+      "start": 37.16,
+      "word": "that"
+    },
+    {
+      "end": 37.51,
+      "start": 37.51,
+      "word": "I"
+    },
+    {
+      "end": 37.72,
+      "start": 37.51,
+      "word": "'ve"
+    },
+    {
+      "end": 37.92,
+      "start": 37.72,
+      "word": "found"
+    },
+    {
+      "end": 38.28,
+      "start": 38.17,
+      "word": "all"
+    },
+    {
+      "end": 38.56,
+      "start": 38.28,
+      "word": "over"
+    },
+    {
+      "end": 38.75,
+      "start": 38.56,
+      "word": "the"
+    },
+    {
+      "end": 39.25,
+      "start": 38.77,
+      "word": "internet"
+    },
+    {
+      "end": 39.61,
+      "start": 39.34,
+      "word": "from"
+    },
+    {
+      "end": 39.88,
+      "start": 39.61,
+      "word": "lots"
+    },
+    {
+      "end": 40.0,
+      "start": 39.88,
+      "word": "of"
+    },
+    {
+      "end": 40.62,
+      "start": 40.0,
+      "word": "different"
+    },
+    {
+      "end": 40.79,
+      "start": 40.62,
+      "word": "people"
+    },
+    {
+      "end": 41.24,
+      "start": 41.23,
+      "word": "."
+    },
+    {
+      "end": 41.42,
+      "start": 41.24,
+      "word": "But"
+    },
+    {
+      "end": 41.62,
+      "start": 41.44,
+      "word": "the"
+    },
+    {
+      "end": 42.01,
+      "start": 41.78,
+      "word": "point"
+    },
+    {
+      "end": 42.14,
+      "start": 42.01,
+      "word": "of"
+    },
+    {
+      "end": 42.44,
+      "start": 42.15,
+      "word": "this"
+    },
+    {
+      "end": 42.63,
+      "start": 42.44,
+      "word": "is"
+    },
+    {
+      "end": 42.84,
+      "start": 42.63,
+      "word": "just"
+    },
+    {
+      "end": 42.94,
+      "start": 42.84,
+      "word": "to"
+    },
+    {
+      "end": 43.18,
+      "start": 42.96,
+      "word": "give"
+    },
+    {
+      "end": 43.36,
+      "start": 43.18,
+      "word": "you"
+    },
+    {
+      "end": 43.66,
+      "start": 43.36,
+      "word": "some"
+    },
+    {
+      "end": 44.08,
+      "start": 43.74,
+      "word": "ideas"
+    },
+    {
+      "end": 44.2,
+      "start": 44.08,
+      "word": "on"
+    },
+    {
+      "end": 44.43,
+      "start": 44.2,
+      "word": "what"
+    },
+    {
+      "end": 44.62,
+      "start": 44.44,
+      "word": "you"
+    },
+    {
+      "end": 44.8,
+      "start": 44.62,
+      "word": "can"
+    },
+    {
+      "end": 45.15,
+      "start": 44.8,
+      "word": "create"
+    },
+    {
+      "end": 45.21,
+      "start": 45.15,
+      "word": "."
+    },
+    {
+      "end": 45.47,
+      "start": 45.38,
+      "word": "So"
+    },
+    {
+      "end": 45.53,
+      "start": 45.47,
+      "word": "I"
+    },
+    {
+      "end": 45.99,
+      "start": 45.53,
+      "word": "created"
+    },
+    {
+      "end": 46.05,
+      "start": 45.99,
+      "word": "a"
+    },
+    {
+      "end": 46.45,
+      "start": 46.05,
+      "word": "unique"
+    },
+    {
+      "end": 46.68,
+      "start": 46.45,
+      "word": "one"
+    },
+    {
+      "end": 46.68,
+      "start": 46.68,
+      "word": ","
+    },
+    {
+      "end": 46.96,
+      "start": 46.68,
+      "word": "which"
+    },
+    {
+      "end": 46.97,
+      "start": 46.96,
+      "word": "I"
+    },
+    {
+      "end": 47.29,
+      "start": 47.05,
+      "word": "found"
+    },
+    {
+      "end": 47.56,
+      "start": 47.29,
+      "word": "really"
+    },
+    {
+      "end": 48.02,
+      "start": 47.69,
+      "word": "helpful"
+    },
+    {
+      "end": 48.06,
+      "start": 48.02,
+      "word": ","
+    },
+    {
+      "end": 48.84,
+      "start": 48.16,
+      "word": "Google"
+    },
+    {
+      "end": 49.32,
+      "start": 49.27,
+      "word": "Ads"
+    },
+    {
+      "end": 49.32,
+      "start": 49.32,
+      "word": ","
+    },
+    {
+      "end": 49.51,
+      "start": 49.32,
+      "word": "and"
+    },
+    {
+      "end": 49.78,
+      "start": 49.64,
+      "word": "it"
+    },
+    {
+      "end": 50.14,
+      "start": 49.78,
+      "word": "asks"
+    },
+    {
+      "end": 50.71,
+      "start": 50.25,
+      "word": "Google"
+    },
+    {
+      "end": 50.92,
+      "start": 50.71,
+      "word": "Ads"
+    },
+    {
+      "end": 51.32,
+      "start": 51.01,
+      "word": "to"
+    },
+    {
+      "end": 52.22,
+      "start": 51.44,
+      "word": "export"
+    },
+    {
+      "end": 52.57,
+      "start": 52.22,
+      "word": "all"
+    },
+    {
+      "end": 52.69,
+      "start": 52.57,
+      "word": "of"
+    },
+    {
+      "end": 52.85,
+      "start": 52.69,
+      "word": "the"
+    },
+    {
+      "end": 52.99,
+      "start": 52.85,
+      "word": "data"
+    },
+    {
+      "end": 53.31,
+      "start": 53.08,
+      "word": "from"
+    },
+    {
+      "end": 53.43,
+      "start": 53.37,
+      "word": "an"
+    },
+    {
+      "end": 53.67,
+      "start": 53.55,
+      "word": "ads"
+    },
+    {
+      "end": 54.12,
+      "start": 53.67,
+      "word": "account"
+    },
+    {
+      "end": 54.36,
+      "start": 54.14,
+      "word": "."
+    },
+    {
+      "end": 54.45,
+      "start": 54.36,
+      "word": "So"
+    },
+    {
+      "end": 54.64,
+      "start": 54.45,
+      "word": "this"
+    },
+    {
+      "end": 54.73,
+      "start": 54.64,
+      "word": "is"
+    },
+    {
+      "end": 55.01,
+      "start": 54.73,
+      "word": "really"
+    },
+    {
+      "end": 55.36,
+      "start": 55.01,
+      "word": "helpful"
+    },
+    {
+      "end": 55.65,
+      "start": 55.36,
+      "word": "because"
+    },
+    {
+      "end": 55.81,
+      "start": 55.68,
+      "word": "you"
+    },
+    {
+      "end": 55.96,
+      "start": 55.85,
+      "word": "can"
+    },
+    {
+      "end": 56.16,
+      "start": 55.96,
+      "word": "take"
+    },
+    {
+      "end": 56.3,
+      "start": 56.16,
+      "word": "all"
+    },
+    {
+      "end": 56.61,
+      "start": 56.3,
+      "word": "that"
+    },
+    {
+      "end": 56.96,
+      "start": 56.72,
+      "word": "data"
+    },
+    {
+      "end": 57.21,
+      "start": 56.96,
+      "word": "into"
+    },
+    {
+      "end": 57.25,
+      "start": 57.21,
+      "word": "a"
+    },
+    {
+      "end": 57.96,
+      "start": 57.34,
+      "word": "spreadsheet"
+    },
+    {
+      "end": 58.0,
+      "start": 57.96,
+      "word": "like"
+    },
+    {
+      "end": 58.48,
+      "start": 58.24,
+      "word": "this"
+    },
+    {
+      "end": 58.48,
+      "start": 58.48,
+      "word": ","
+    },
+    {
+      "end": 58.64,
+      "start": 58.48,
+      "word": "and"
+    },
+    {
+      "end": 58.8,
+      "start": 58.64,
+      "word": "you"
+    },
+    {
+      "end": 58.91,
+      "start": 58.8,
+      "word": "can"
+    },
+    {
+      "end": 59.4,
+      "start": 58.99,
+      "word": "actually"
+    },
+    {
+      "end": 59.71,
+      "start": 59.4,
+      "word": "upload"
+    },
+    {
+      "end": 60.0,
+      "start": 59.75,
+      "word": "this"
+    },
+    {
+      "end": 60.65,
+      "start": 60.0,
+      "word": "directly"
+    },
+    {
+      "end": 61.07,
+      "start": 60.73,
+      "word": "to"
+    },
+    {
+      "end": 61.64,
+      "start": 61.16,
+      "word": "Chat"
+    },
+    {
+      "end": 61.77,
+      "start": 61.73,
+      "word": "G"
+    },
+    {
+      "end": 62.04,
+      "start": 61.77,
+      "word": "PT"
+    },
+    {
+      "end": 62.18,
+      "start": 62.04,
+      "word": "or"
+    },
+    {
+      "end": 62.36,
+      "start": 62.26,
+      "word": "Cl"
+    },
+    {
+      "end": 62.52,
+      "start": 62.36,
+      "word": "od"
+    },
+    {
+      "end": 62.66,
+      "start": 62.52,
+      "word": "or"
+    },
+    {
+      "end": 63.23,
+      "start": 62.66,
+      "word": "whatever"
+    },
+    {
+      "end": 63.53,
+      "start": 63.24,
+      "word": "your"
+    },
+    {
+      "end": 64.11,
+      "start": 63.53,
+      "word": "favorite"
+    },
+    {
+      "end": 64.25,
+      "start": 64.11,
+      "word": "AI"
+    },
+    {
+      "end": 64.53,
+      "start": 64.25,
+      "word": "tool"
+    },
+    {
+      "end": 64.72,
+      "start": 64.72,
+      "word": "is"
+    },
+    {
+      "end": 64.72,
+      "start": 64.72,
+      "word": ","
+    },
+    {
+      "end": 64.9,
+      "start": 64.74,
+      "word": "and"
+    },
+    {
+      "end": 65.08,
+      "start": 64.9,
+      "word": "you"
+    },
+    {
+      "end": 65.26,
+      "start": 65.08,
+      "word": "can"
+    },
+    {
+      "end": 65.39,
+      "start": 65.26,
+      "word": "ask"
+    },
+    {
+      "end": 65.52,
+      "start": 65.43,
+      "word": "it"
+    },
+    {
+      "end": 66.08,
+      "start": 65.61,
+      "word": "questions"
+    },
+    {
+      "end": 66.43,
+      "start": 66.12,
+      "word": "about"
+    },
+    {
+      "end": 66.56,
+      "start": 66.43,
+      "word": "the"
+    },
+    {
+      "end": 66.86,
+      "start": 66.6,
+      "word": "data"
+    },
+    {
+      "end": 67.07,
+      "start": 66.86,
+      "word": "."
+    },
+    {
+      "end": 67.26,
+      "start": 67.11,
+      "word": "And"
+    },
+    {
+      "end": 67.35,
+      "start": 67.26,
+      "word": "it"
+    },
+    {
+      "end": 67.52,
+      "start": 67.4,
+      "word": "has"
+    },
+    {
+      "end": 67.66,
+      "start": 67.52,
+      "word": "all"
+    },
+    {
+      "end": 67.78,
+      "start": 67.72,
+      "word": "of"
+    },
+    {
+      "end": 67.88,
+      "start": 67.78,
+      "word": "it"
+    },
+    {
+      "end": 68.25,
+      "start": 67.88,
+      "word": "sitting"
+    },
+    {
+      "end": 68.52,
+      "start": 68.25,
+      "word": "there"
+    },
+    {
+      "end": 68.62,
+      "start": 68.52,
+      "word": "in"
+    },
+    {
+      "end": 68.67,
+      "start": 68.62,
+      "word": "a"
+    },
+    {
+      "end": 69.28,
+      "start": 68.67,
+      "word": "spreadsheet"
+    },
+    {
+      "end": 69.32,
+      "start": 69.32,
+      "word": ","
+    },
+    {
+      "end": 69.63,
+      "start": 69.33,
+      "word": "which"
+    },
+    {
+      "end": 69.94,
+      "start": 69.64,
+      "word": "means"
+    },
+    {
+      "end": 70.05,
+      "start": 69.94,
+      "word": "it"
+    },
+    {
+      "end": 70.16,
+      "start": 70.05,
+      "word": "'s"
+    },
+    {
+      "end": 70.55,
+      "start": 70.24,
+      "word": "really"
+    },
+    {
+      "end": 70.81,
+      "start": 70.55,
+      "word": "easy"
+    },
+    {
+      "end": 71.05,
+      "start": 70.84,
+      "word": "for"
+    },
+    {
+      "end": 71.18,
+      "start": 71.05,
+      "word": "an"
+    },
+    {
+      "end": 71.33,
+      "start": 71.19,
+      "word": "AI"
+    },
+    {
+      "end": 71.61,
+      "start": 71.33,
+      "word": "tool"
+    },
+    {
+      "end": 71.7,
+      "start": 71.66,
+      "word": "to"
+    },
+    {
+      "end": 71.92,
+      "start": 71.73,
+      "word": "read"
+    },
+    {
+      "end": 72.09,
+      "start": 71.92,
+      "word": "that"
+    },
+    {
+      "end": 72.29,
+      "start": 72.2,
+      "word": "data"
+    },
+    {
+      "end": 72.48,
+      "start": 72.33,
+      "word": "."
+    },
+    {
+      "end": 72.78,
+      "start": 72.48,
+      "word": "Come"
+    },
+    {
+      "end": 72.93,
+      "start": 72.78,
+      "word": "up"
+    },
+    {
+      "end": 73.16,
+      "start": 72.93,
+      "word": "with"
+    },
+    {
+      "end": 73.4,
+      "start": 73.3,
+      "word": "any"
+    },
+    {
+      "end": 73.91,
+      "start": 73.47,
+      "word": "script"
+    },
+    {
+      "end": 74.31,
+      "start": 73.91,
+      "word": "ideas"
+    },
+    {
+      "end": 74.32,
+      "start": 74.32,
+      "word": ","
+    },
+    {
+      "end": 74.46,
+      "start": 74.32,
+      "word": "and"
+    },
+    {
+      "end": 74.55,
+      "start": 74.46,
+      "word": "if"
+    },
+    {
+      "end": 74.96,
+      "start": 74.55,
+      "word": "something"
+    },
+    {
+      "end": 75.08,
+      "start": 74.99,
+      "word": "'s"
+    },
+    {
+      "end": 75.32,
+      "start": 75.08,
+      "word": "under"
+    },
+    {
+      "end": 75.84,
+      "start": 75.32,
+      "word": "performing"
+    },
+    {
+      "end": 75.84,
+      "start": 75.84,
+      "word": ","
+    },
+    {
+      "end": 75.99,
+      "start": 75.84,
+      "word": "you"
+    },
+    {
+      "end": 76.13,
+      "start": 75.99,
+      "word": "can"
+    },
+    {
+      "end": 76.44,
+      "start": 76.18,
+      "word": "create"
+    },
+    {
+      "end": 76.57,
+      "start": 76.44,
+      "word": "that"
+    },
+    {
+      "end": 76.96,
+      "start": 76.66,
+      "word": "script"
+    },
+    {
+      "end": 76.96,
+      "start": 76.96,
+      "word": "."
+    },
+    {
+      "end": 77.21,
+      "start": 76.96,
+      "word": "That"
+    },
+    {
+      "end": 77.31,
+      "start": 77.21,
+      "word": "'s"
+    },
+    {
+      "end": 77.65,
+      "start": 77.32,
+      "word": "actually"
+    },
+    {
+      "end": 77.89,
+      "start": 77.89,
+      "word": "a"
+    },
+    {
+      "end": 78.13,
+      "start": 77.91,
+      "word": "much"
+    },
+    {
+      "end": 78.39,
+      "start": 78.2,
+      "word": "more"
+    },
+    {
+      "end": 78.83,
+      "start": 78.39,
+      "word": "simpler"
+    },
+    {
+      "end": 79.24,
+      "start": 78.83,
+      "word": "script"
+    },
+    {
+      "end": 79.24,
+      "start": 79.24,
+      "word": "."
+    },
+    {
+      "end": 79.54,
+      "start": 79.24,
+      "word": "And"
+    },
+    {
+      "end": 79.74,
+      "start": 79.54,
+      "word": "an"
+    },
+    {
+      "end": 80.04,
+      "start": 79.74,
+      "word": "RSA"
+    },
+    {
+      "end": 80.74,
+      "start": 80.04,
+      "word": "builder"
+    },
+    {
+      "end": 81.36,
+      "start": 80.75,
+      "word": "script"
+    },
+    {
+      "end": 81.6,
+      "start": 81.36,
+      "word": ","
+    },
+    {
+      "end": 81.77,
+      "start": 81.6,
+      "word": "you"
+    },
+    {
+      "end": 82.05,
+      "start": 81.77,
+      "word": "could"
+    },
+    {
+      "end": 82.36,
+      "start": 82.05,
+      "word": "create"
+    },
+    {
+      "end": 82.6,
+      "start": 82.43,
+      "word": "that"
+    },
+    {
+      "end": 82.89,
+      "start": 82.61,
+      "word": "easily"
+    },
+    {
+      "end": 83.08,
+      "start": 83.08,
+      "word": ","
+    },
+    {
+      "end": 83.38,
+      "start": 83.1,
+      "word": "write"
+    },
+    {
+      "end": 83.53,
+      "start": 83.46,
+      "word": "a"
+    },
+    {
+      "end": 83.93,
+      "start": 83.53,
+      "word": "script"
+    },
+    {
+      "end": 84.2,
+      "start": 84.03,
+      "word": "that"
+    },
+    {
+      "end": 84.68,
+      "start": 84.3,
+      "word": "looks"
+    },
+    {
+      "end": 84.83,
+      "start": 84.68,
+      "word": "at"
+    },
+    {
+      "end": 85.04,
+      "start": 84.83,
+      "word": "your"
+    },
+    {
+      "end": 85.72,
+      "start": 85.31,
+      "word": "account"
+    },
+    {
+      "end": 85.92,
+      "start": 85.72,
+      "word": "and"
+    },
+    {
+      "end": 86.25,
+      "start": 85.92,
+      "word": "comes"
+    },
+    {
+      "end": 86.36,
+      "start": 86.25,
+      "word": "up"
+    },
+    {
+      "end": 86.64,
+      "start": 86.45,
+      "word": "with"
+    },
+    {
+      "end": 86.9,
+      "start": 86.64,
+      "word": "like"
+    },
+    {
+      "end": 87.36,
+      "start": 86.9,
+      "word": "drawing"
+    },
+    {
+      "end": 87.44,
+      "start": 87.36,
+      "word": "RSA"
+    },
+    {
+      "end": 87.77,
+      "start": 87.56,
+      "word": "."
+    },
+    {
+      "end": 87.94,
+      "start": 87.85,
+      "word": "So"
+    },
+    {
+      "end": 88.59,
+      "start": 87.94,
+      "word": "literally"
+    },
+    {
+      "end": 88.77,
+      "start": 88.6,
+      "word": "the"
+    },
+    {
+      "end": 89.04,
+      "start": 88.81,
+      "word": "sky"
+    },
+    {
+      "end": 89.18,
+      "start": 89.06,
+      "word": "'s"
+    },
+    {
+      "end": 89.4,
+      "start": 89.18,
+      "word": "the"
+    },
+    {
+      "end": 89.77,
+      "start": 89.4,
+      "word": "limit"
+    },
+    {
+      "end": 89.86,
+      "start": 89.77,
+      "word": ","
+    },
+    {
+      "end": 90.13,
+      "start": 89.96,
+      "word": "use"
+    },
+    {
+      "end": 90.35,
+      "start": 90.13,
+      "word": "your"
+    },
+    {
+      "end": 90.96,
+      "start": 90.35,
+      "word": "imagination"
+    },
+    {
+      "end": 91.15,
+      "start": 90.96,
+      "word": "."
+    },
+    {
+      "end": 91.19,
+      "start": 91.16,
+      "word": "I"
+    },
+    {
+      "end": 91.25,
+      "start": 91.19,
+      "word": "'m"
+    },
+    {
+      "end": 91.36,
+      "start": 91.25,
+      "word": "just"
+    },
+    {
+      "end": 91.54,
+      "start": 91.4,
+      "word": "gonna"
+    },
+    {
+      "end": 91.67,
+      "start": 91.54,
+      "word": "show"
+    },
+    {
+      "end": 91.77,
+      "start": 91.67,
+      "word": "you"
+    },
+    {
+      "end": 91.85,
+      "start": 91.77,
+      "word": "how"
+    },
+    {
+      "end": 91.93,
+      "start": 91.89,
+      "word": "to"
+    },
+    {
+      "end": 91.94,
+      "start": 91.93,
+      "word": "do"
+    },
+    {
+      "end": 92.05,
+      "start": 91.99,
+      "word": "it"
+    },
+    {
+      "end": 92.19,
+      "start": 92.05,
+      "word": "."
+    },
+    {
+      "end": 92.38,
+      "start": 92.2,
+      "word": "So"
+    },
+    {
+      "end": 92.66,
+      "start": 92.5,
+      "word": "all"
+    },
+    {
+      "end": 92.94,
+      "start": 92.66,
+      "word": "you"
+    },
+    {
+      "end": 93.31,
+      "start": 92.94,
+      "word": "have"
+    },
+    {
+      "end": 93.49,
+      "start": 93.31,
+      "word": "to"
+    },
+    {
+      "end": 93.56,
+      "start": 93.49,
+      "word": "do"
+    },
+    {
+      "end": 93.85,
+      "start": 93.67,
+      "word": "in"
+    },
+    {
+      "end": 94.22,
+      "start": 93.85,
+      "word": "Chat"
+    },
+    {
+      "end": 94.3,
+      "start": 94.22,
+      "word": "G"
+    },
+    {
+      "end": 94.56,
+      "start": 94.32,
+      "word": "PT"
+    },
+    {
+      "end": 94.67,
+      "start": 94.56,
+      "word": "is"
+    },
+    {
+      "end": 94.8,
+      "start": 94.67,
+      "word": "just"
+    },
+    {
+      "end": 95.11,
+      "start": 94.94,
+      "word": "tell"
+    },
+    {
+      "end": 95.21,
+      "start": 95.11,
+      "word": "it"
+    },
+    {
+      "end": 95.44,
+      "start": 95.21,
+      "word": "your"
+    },
+    {
+      "end": 95.66,
+      "start": 95.44,
+      "word": "idea"
+    },
+    {
+      "end": 95.84,
+      "start": 95.66,
+      "word": "."
+    },
+    {
+      "end": 96.05,
+      "start": 95.84,
+      "word": "Yeah"
+    },
+    {
+      "end": 96.15,
+      "start": 96.05,
+      "word": ","
+    },
+    {
+      "end": 96.2,
+      "start": 96.15,
+      "word": "I"
+    },
+    {
+      "end": 96.4,
+      "start": 96.2,
+      "word": "want"
+    },
+    {
+      "end": 96.55,
+      "start": 96.4,
+      "word": "you"
+    },
+    {
+      "end": 96.66,
+      "start": 96.57,
+      "word": "to"
+    },
+    {
+      "end": 97.04,
+      "start": 96.67,
+      "word": "create"
+    },
+    {
+      "end": 97.1,
+      "start": 97.04,
+      "word": "a"
+    },
+    {
+      "end": 97.63,
+      "start": 97.17,
+      "word": "Google"
+    },
+    {
+      "end": 97.85,
+      "start": 97.68,
+      "word": "Ad"
+    },
+    {
+      "end": 98.08,
+      "start": 97.85,
+      "word": "script"
+    },
+    {
+      "end": 98.4,
+      "start": 98.4,
+      "word": ","
+    },
+    {
+      "end": 98.77,
+      "start": 98.45,
+      "word": "which"
+    },
+    {
+      "end": 99.28,
+      "start": 98.77,
+      "word": "accompl"
+    },
+    {
+      "end": 99.59,
+      "start": 99.28,
+      "word": "ishes"
+    },
+    {
+      "end": 99.96,
+      "start": 99.71,
+      "word": "this"
+    },
+    {
+      "end": 100.1,
+      "start": 99.96,
+      "word": "."
+    },
+    {
+      "end": 100.27,
+      "start": 100.21,
+      "word": "I"
+    },
+    {
+      "end": 100.47,
+      "start": 100.27,
+      "word": "had"
+    },
+    {
+      "end": 100.65,
+      "start": 100.56,
+      "word": "to"
+    },
+    {
+      "end": 100.87,
+      "start": 100.65,
+      "word": "run"
+    },
+    {
+      "end": 101.11,
+      "start": 100.87,
+      "word": "like"
+    },
+    {
+      "end": 101.57,
+      "start": 101.18,
+      "word": "three"
+    },
+    {
+      "end": 101.73,
+      "start": 101.66,
+      "word": "or"
+    },
+    {
+      "end": 102.04,
+      "start": 101.73,
+      "word": "four"
+    },
+    {
+      "end": 102.43,
+      "start": 102.04,
+      "word": "tests"
+    },
+    {
+      "end": 102.58,
+      "start": 102.43,
+      "word": "on"
+    },
+    {
+      "end": 103.05,
+      "start": 102.58,
+      "word": "Google"
+    },
+    {
+      "end": 103.36,
+      "start": 103.05,
+      "word": "Ads"
+    },
+    {
+      "end": 103.36,
+      "start": 103.36,
+      "word": ","
+    },
+    {
+      "end": 103.49,
+      "start": 103.36,
+      "word": "and"
+    },
+    {
+      "end": 103.6,
+      "start": 103.52,
+      "word": "you"
+    },
+    {
+      "end": 103.76,
+      "start": 103.62,
+      "word": "will"
+    },
+    {
+      "end": 103.93,
+      "start": 103.83,
+      "word": "get"
+    },
+    {
+      "end": 103.97,
+      "start": 103.93,
+      "word": "a"
+    },
+    {
+      "end": 104.49,
+      "start": 103.97,
+      "word": "notification"
+    },
+    {
+      "end": 104.7,
+      "start": 104.51,
+      "word": "."
+    },
+    {
+      "end": 104.84,
+      "start": 104.7,
+      "word": "So"
+    },
+    {
+      "end": 105.12,
+      "start": 104.84,
+      "word": "here"
+    },
+    {
+      "end": 105.26,
+      "start": 105.12,
+      "word": "on"
+    },
+    {
+      "end": 105.68,
+      "start": 105.26,
+      "word": "Google"
+    },
+    {
+      "end": 105.81,
+      "start": 105.68,
+      "word": "Ads"
+    },
+    {
+      "end": 106.04,
+      "start": 106.03,
+      "word": ","
+    },
+    {
+      "end": 106.31,
+      "start": 106.04,
+      "word": "all"
+    },
+    {
+      "end": 106.58,
+      "start": 106.31,
+      "word": "you"
+    },
+    {
+      "end": 106.76,
+      "start": 106.58,
+      "word": "do"
+    },
+    {
+      "end": 106.94,
+      "start": 106.76,
+      "word": "is"
+    },
+    {
+      "end": 107.29,
+      "start": 106.94,
+      "word": "just"
+    },
+    {
+      "end": 107.46,
+      "start": 107.3,
+      "word": "go"
+    },
+    {
+      "end": 107.65,
+      "start": 107.53,
+      "word": "to"
+    },
+    {
+      "end": 107.86,
+      "start": 107.65,
+      "word": "the"
+    },
+    {
+      "end": 108.57,
+      "start": 108.29,
+      "word": "scripts"
+    },
+    {
+      "end": 108.7,
+      "start": 108.57,
+      "word": ","
+    },
+    {
+      "end": 109.06,
+      "start": 108.8,
+      "word": "new"
+    },
+    {
+      "end": 109.6,
+      "start": 109.06,
+      "word": "script"
+    },
+    {
+      "end": 109.6,
+      "start": 109.6,
+      "word": ","
+    },
+    {
+      "end": 109.86,
+      "start": 109.6,
+      "word": "and"
+    },
+    {
+      "end": 110.12,
+      "start": 109.86,
+      "word": "you"
+    },
+    {
+      "end": 110.42,
+      "start": 110.12,
+      "word": "just"
+    },
+    {
+      "end": 110.8,
+      "start": 110.66,
+      "word": "copy"
+    },
+    {
+      "end": 111.06,
+      "start": 110.8,
+      "word": "and"
+    },
+    {
+      "end": 111.52,
+      "start": 111.06,
+      "word": "paste"
+    },
+    {
+      "end": 111.85,
+      "start": 111.52,
+      "word": "the"
+    },
+    {
+      "end": 112.39,
+      "start": 111.85,
+      "word": "exact"
+    },
+    {
+      "end": 112.48,
+      "start": 112.39,
+      "word": "code"
+    },
+    {
+      "end": 113.07,
+      "start": 112.87,
+      "word": "that"
+    },
+    {
+      "end": 113.3,
+      "start": 113.07,
+      "word": "Chat"
+    },
+    {
+      "end": 113.34,
+      "start": 113.3,
+      "word": "G"
+    },
+    {
+      "end": 113.46,
+      "start": 113.35,
+      "word": "PT"
+    },
+    {
+      "end": 113.75,
+      "start": 113.46,
+      "word": "gives"
+    },
+    {
+      "end": 113.92,
+      "start": 113.75,
+      "word": "you"
+    },
+    {
+      "end": 114.04,
+      "start": 113.92,
+      "word": ","
+    },
+    {
+      "end": 114.2,
+      "start": 114.09,
+      "word": "and"
+    },
+    {
+      "end": 114.37,
+      "start": 114.2,
+      "word": "then"
+    },
+    {
+      "end": 114.49,
+      "start": 114.37,
+      "word": "you"
+    },
+    {
+      "end": 114.61,
+      "start": 114.49,
+      "word": "run"
+    },
+    {
+      "end": 114.73,
+      "start": 114.61,
+      "word": "the"
+    },
+    {
+      "end": 114.97,
+      "start": 114.73,
+      "word": "script"
+    },
+    {
+      "end": 115.16,
+      "start": 115.14,
+      "word": "."
+    },
+    {
+      "end": 115.27,
+      "start": 115.16,
+      "word": "It"
+    },
+    {
+      "end": 115.36,
+      "start": 115.28,
+      "word": "'s"
+    },
+    {
+      "end": 116.0,
+      "start": 115.42,
+      "word": "incredibly"
+    },
+    {
+      "end": 116.24,
+      "start": 116.0,
+      "word": "easy"
+    },
+    {
+      "end": 116.4,
+      "start": 116.24,
+      "word": "."
+    },
+    {
+      "end": 116.75,
+      "start": 116.44,
+      "word": "Script"
+    },
+    {
+      "end": 116.8,
+      "start": 116.78,
+      "word": "s"
+    },
+    {
+      "end": 117.03,
+      "start": 116.87,
+      "word": "make"
+    },
+    {
+      "end": 117.41,
+      "start": 117.08,
+      "word": "changes"
+    },
+    {
+      "end": 117.53,
+      "start": 117.45,
+      "word": "on"
+    },
+    {
+      "end": 117.58,
+      "start": 117.53,
+      "word": "a"
+    },
+    {
+      "end": 117.8,
+      "start": 117.58,
+      "word": "user"
+    },
+    {
+      "end": 117.87,
+      "start": 117.8,
+      "word": "'s"
+    },
+    {
+      "end": 118.24,
+      "start": 117.95,
+      "word": "behalf"
+    },
+    {
+      "end": 118.44,
+      "start": 118.24,
+      "word": "."
+    },
+    {
+      "end": 118.58,
+      "start": 118.44,
+      "word": "You"
+    },
+    {
+      "end": 118.83,
+      "start": 118.66,
+      "word": "have"
+    },
+    {
+      "end": 118.94,
+      "start": 118.83,
+      "word": "to"
+    },
+    {
+      "end": 119.45,
+      "start": 118.94,
+      "word": "authorize"
+    },
+    {
+      "end": 119.54,
+      "start": 119.45,
+      "word": "it"
+    },
+    {
+      "end": 119.7,
+      "start": 119.63,
+      "word": "."
+    },
+    {
+      "end": 119.86,
+      "start": 119.78,
+      "word": "But"
+    },
+    {
+      "end": 120.01,
+      "start": 119.87,
+      "word": "once"
+    },
+    {
+      "end": 120.11,
+      "start": 120.08,
+      "word": "you"
+    },
+    {
+      "end": 120.24,
+      "start": 120.13,
+      "word": "'ve"
+    },
+    {
+      "end": 120.43,
+      "start": 120.24,
+      "word": "added"
+    },
+    {
+      "end": 120.44,
+      "start": 120.43,
+      "word": "your"
+    },
+    {
+      "end": 120.78,
+      "start": 120.61,
+      "word": "script"
+    },
+    {
+      "end": 120.9,
+      "start": 120.8,
+      "word": ","
+    },
+    {
+      "end": 121.08,
+      "start": 120.9,
+      "word": "you"
+    },
+    {
+      "end": 121.39,
+      "start": 121.12,
+      "word": "just"
+    },
+    {
+      "end": 121.52,
+      "start": 121.39,
+      "word": "run"
+    },
+    {
+      "end": 121.78,
+      "start": 121.76,
+      "word": "it"
+    },
+    {
+      "end": 121.78,
+      "start": 121.78,
+      "word": ","
+    },
+    {
+      "end": 122.19,
+      "start": 121.78,
+      "word": "where"
+    },
+    {
+      "end": 122.37,
+      "start": 122.24,
+      "word": "it"
+    },
+    {
+      "end": 122.63,
+      "start": 122.51,
+      "word": "'s"
+    },
+    {
+      "end": 123.1,
+      "start": 122.63,
+      "word": "pulling"
+    },
+    {
+      "end": 123.36,
+      "start": 123.29,
+      "word": "a"
+    },
+    {
+      "end": 123.76,
+      "start": 123.47,
+      "word": "huge"
+    },
+    {
+      "end": 124.35,
+      "start": 123.76,
+      "word": "amount"
+    },
+    {
+      "end": 124.4,
+      "start": 124.35,
+      "word": "of"
+    },
+    {
+      "end": 124.73,
+      "start": 124.51,
+      "word": "data"
+    },
+    {
+      "end": 125.02,
+      "start": 124.83,
+      "word": "from"
+    },
+    {
+      "end": 125.21,
+      "start": 125.02,
+      "word": "your"
+    },
+    {
+      "end": 125.31,
+      "start": 125.21,
+      "word": "ads"
+    },
+    {
+      "end": 125.72,
+      "start": 125.37,
+      "word": "account"
+    },
+    {
+      "end": 125.85,
+      "start": 125.72,
+      "word": "and"
+    },
+    {
+      "end": 126.17,
+      "start": 125.86,
+      "word": "putting"
+    },
+    {
+      "end": 126.26,
+      "start": 126.18,
+      "word": "it"
+    },
+    {
+      "end": 126.45,
+      "start": 126.26,
+      "word": "into"
+    },
+    {
+      "end": 126.49,
+      "start": 126.45,
+      "word": "a"
+    },
+    {
+      "end": 127.04,
+      "start": 126.49,
+      "word": "spreadsheet"
+    },
+    {
+      "end": 127.04,
+      "start": 127.04,
+      "word": "."
+    },
+    {
+      "end": 127.04,
+      "start": 127.04,
+      "word": "It"
+    },
+    {
+      "end": 127.17,
+      "start": 127.17,
+      "word": "'s"
+    },
+    {
+      "end": 127.53,
+      "start": 127.2,
+      "word": "probably"
+    },
+    {
+      "end": 127.74,
+      "start": 127.54,
+      "word": "gonna"
+    },
+    {
+      "end": 127.92,
+      "start": 127.87,
+      "word": "take"
+    },
+    {
+      "end": 128.04,
+      "start": 127.92,
+      "word": "like"
+    },
+    {
+      "end": 128.26,
+      "start": 128.1,
+      "word": "five"
+    },
+    {
+      "end": 128.55,
+      "start": 128.26,
+      "word": "minutes"
+    },
+    {
+      "end": 128.63,
+      "start": 128.55,
+      "word": "to"
+    },
+    {
+      "end": 128.74,
+      "start": 128.63,
+      "word": "run"
+    },
+    {
+      "end": 128.79,
+      "start": 128.75,
+      "word": ","
+    },
+    {
+      "end": 129.09,
+      "start": 128.88,
+      "word": "but"
+    },
+    {
+      "end": 129.16,
+      "start": 129.09,
+      "word": "a"
+    },
+    {
+      "end": 129.61,
+      "start": 129.16,
+      "word": "standard"
+    },
+    {
+      "end": 130.12,
+      "start": 129.7,
+      "word": "script"
+    },
+    {
+      "end": 130.4,
+      "start": 130.12,
+      "word": "will"
+    },
+    {
+      "end": 130.61,
+      "start": 130.4,
+      "word": "run"
+    },
+    {
+      "end": 130.89,
+      "start": 130.61,
+      "word": "very"
+    },
+    {
+      "end": 131.4,
+      "start": 130.89,
+      "word": "quickly"
+    },
+    {
+      "end": 131.4,
+      "start": 131.4,
+      "word": ","
+    },
+    {
+      "end": 131.56,
+      "start": 131.4,
+      "word": "and"
+    },
+    {
+      "end": 131.72,
+      "start": 131.56,
+      "word": "you"
+    },
+    {
+      "end": 131.78,
+      "start": 131.72,
+      "word": "'ll"
+    },
+    {
+      "end": 132.04,
+      "start": 131.88,
+      "word": "get"
+    },
+    {
+      "end": 132.06,
+      "start": 132.04,
+      "word": "a"
+    },
+    {
+      "end": 132.59,
+      "start": 132.15,
+      "word": "debugging"
+    },
+    {
+      "end": 132.87,
+      "start": 132.59,
+      "word": "error"
+    },
+    {
+      "end": 133.08,
+      "start": 132.87,
+      "word": "."
+    },
+    {
+      "end": 133.23,
+      "start": 133.08,
+      "word": "When"
+    },
+    {
+      "end": 133.48,
+      "start": 133.33,
+      "word": "you"
+    },
+    {
+      "end": 133.71,
+      "start": 133.48,
+      "word": "test"
+    },
+    {
+      "end": 133.9,
+      "start": 133.71,
+      "word": "this"
+    },
+    {
+      "end": 134.08,
+      "start": 134.05,
+      "word": ","
+    },
+    {
+      "end": 134.25,
+      "start": 134.08,
+      "word": "you"
+    },
+    {
+      "end": 134.47,
+      "start": 134.35,
+      "word": "just"
+    },
+    {
+      "end": 134.65,
+      "start": 134.49,
+      "word": "put"
+    },
+    {
+      "end": 134.81,
+      "start": 134.65,
+      "word": "the"
+    },
+    {
+      "end": 134.99,
+      "start": 134.82,
+      "word": "error"
+    },
+    {
+      "end": 135.26,
+      "start": 135.1,
+      "word": "message"
+    },
+    {
+      "end": 136.06,
+      "start": 135.53,
+      "word": "directly"
+    },
+    {
+      "end": 136.33,
+      "start": 136.06,
+      "word": "into"
+    },
+    {
+      "end": 136.55,
+      "start": 136.33,
+      "word": "Chat"
+    },
+    {
+      "end": 136.66,
+      "start": 136.6,
+      "word": "G"
+    },
+    {
+      "end": 136.79,
+      "start": 136.66,
+      "word": "PT"
+    },
+    {
+      "end": 137.06,
+      "start": 136.79,
+      "word": "like"
+    },
+    {
+      "end": 137.33,
+      "start": 137.06,
+      "word": "this"
+    },
+    {
+      "end": 137.56,
+      "start": 137.33,
+      "word": "."
+    },
+    {
+      "end": 137.8,
+      "start": 137.56,
+      "word": "Again"
+    },
+    {
+      "end": 137.88,
+      "start": 137.8,
+      "word": ","
+    },
+    {
+      "end": 137.93,
+      "start": 137.88,
+      "word": "I"
+    },
+    {
+      "end": 138.12,
+      "start": 138.04,
+      "word": "have"
+    },
+    {
+      "end": 138.2,
+      "start": 138.12,
+      "word": "no"
+    },
+    {
+      "end": 138.5,
+      "start": 138.21,
+      "word": "coding"
+    },
+    {
+      "end": 138.99,
+      "start": 138.5,
+      "word": "experience"
+    },
+    {
+      "end": 139.18,
+      "start": 138.99,
+      "word": "."
+    },
+    {
+      "end": 139.22,
+      "start": 139.18,
+      "word": "I"
+    },
+    {
+      "end": 139.3,
+      "start": 139.22,
+      "word": "'m"
+    },
+    {
+      "end": 139.46,
+      "start": 139.3,
+      "word": "just"
+    },
+    {
+      "end": 139.75,
+      "start": 139.46,
+      "word": "copying"
+    },
+    {
+      "end": 139.85,
+      "start": 139.75,
+      "word": "and"
+    },
+    {
+      "end": 140.03,
+      "start": 139.87,
+      "word": "past"
+    },
+    {
+      "end": 140.15,
+      "start": 140.03,
+      "word": "ing"
+    },
+    {
+      "end": 140.23,
+      "start": 140.15,
+      "word": "."
+    },
+    {
+      "end": 140.44,
+      "start": 140.33,
+      "word": "Got"
+    },
+    {
+      "end": 140.61,
+      "start": 140.49,
+      "word": "this"
+    },
+    {
+      "end": 140.97,
+      "start": 140.72,
+      "word": "error"
+    },
+    {
+      "end": 140.99,
+      "start": 140.97,
+      "word": ","
+    },
+    {
+      "end": 141.41,
+      "start": 141.19,
+      "word": "copied"
+    },
+    {
+      "end": 141.57,
+      "start": 141.41,
+      "word": "and"
+    },
+    {
+      "end": 141.79,
+      "start": 141.57,
+      "word": "past"
+    },
+    {
+      "end": 141.9,
+      "start": 141.79,
+      "word": "ed"
+    },
+    {
+      "end": 142.04,
+      "start": 141.9,
+      "word": "it"
+    },
+    {
+      "end": 142.04,
+      "start": 142.04,
+      "word": ","
+    },
+    {
+      "end": 142.15,
+      "start": 142.04,
+      "word": "and"
+    },
+    {
+      "end": 142.25,
+      "start": 142.17,
+      "word": "it"
+    },
+    {
+      "end": 142.28,
+      "start": 142.27,
+      "word": "said"
+    },
+    {
+      "end": 142.5,
+      "start": 142.42,
+      "word": ","
+    },
+    {
+      "end": 142.58,
+      "start": 142.5,
+      "word": "ah"
+    },
+    {
+      "end": 142.66,
+      "start": 142.58,
+      "word": ","
+    },
+    {
+      "end": 142.7,
+      "start": 142.66,
+      "word": "I"
+    },
+    {
+      "end": 142.78,
+      "start": 142.7,
+      "word": "'ve"
+    },
+    {
+      "end": 142.96,
+      "start": 142.89,
+      "word": "got"
+    },
+    {
+      "end": 143.04,
+      "start": 142.96,
+      "word": "it"
+    },
+    {
+      "end": 143.24,
+      "start": 143.04,
+      "word": "."
+    },
+    {
+      "end": 143.49,
+      "start": 143.24,
+      "word": "This"
+    },
+    {
+      "end": 143.58,
+      "start": 143.49,
+      "word": "is"
+    },
+    {
+      "end": 143.67,
+      "start": 143.64,
+      "word": "a"
+    },
+    {
+      "end": 144.1,
+      "start": 143.67,
+      "word": "classic"
+    },
+    {
+      "end": 144.52,
+      "start": 144.1,
+      "word": "timeout"
+    },
+    {
+      "end": 144.71,
+      "start": 144.68,
+      "word": "and"
+    },
+    {
+      "end": 144.89,
+      "start": 144.71,
+      "word": "set"
+    },
+    {
+      "end": 145.01,
+      "start": 144.89,
+      "word": "of"
+    },
+    {
+      "end": 145.76,
+      "start": 145.01,
+      "word": "instructions"
+    },
+    {
+      "end": 146.0,
+      "start": 145.76,
+      "word": "."
+    },
+    {
+      "end": 146.02,
+      "start": 146.0,
+      "word": "I"
+    },
+    {
+      "end": 146.07,
+      "start": 146.02,
+      "word": "'ll"
+    },
+    {
+      "end": 146.19,
+      "start": 146.09,
+      "word": "send"
+    },
+    {
+      "end": 146.25,
+      "start": 146.19,
+      "word": "you"
+    },
+    {
+      "end": 146.33,
+      "start": 146.26,
+      "word": "the"
+    },
+    {
+      "end": 146.51,
+      "start": 146.44,
+      "word": "message"
+    },
+    {
+      "end": 146.53,
+      "start": 146.51,
+      "word": "a"
+    },
+    {
+      "end": 146.6,
+      "start": 146.53,
+      "word": "few"
+    },
+    {
+      "end": 146.78,
+      "start": 146.6,
+      "word": "minutes"
+    },
+    {
+      "end": 146.9,
+      "start": 146.78,
+      "word": "later"
+    },
+    {
+      "end": 147.04,
+      "start": 146.91,
+      "word": "."
+    },
+    {
+      "end": 147.2,
+      "start": 147.04,
+      "word": "And"
+    },
+    {
+      "end": 147.35,
+      "start": 147.35,
+      "word": "it"
+    },
+    {
+      "end": 147.79,
+      "start": 147.38,
+      "word": "finally"
+    },
+    {
+      "end": 148.04,
+      "start": 147.79,
+      "word": "gave"
+    },
+    {
+      "end": 148.16,
+      "start": 148.04,
+      "word": "me"
+    },
+    {
+      "end": 148.22,
+      "start": 148.16,
+      "word": "a"
+    },
+    {
+      "end": 148.64,
+      "start": 148.22,
+      "word": "script"
+    },
+    {
+      "end": 148.64,
+      "start": 148.64,
+      "word": ","
+    },
+    {
+      "end": 148.76,
+      "start": 148.64,
+      "word": "not"
+    },
+    {
+      "end": 148.96,
+      "start": 148.8,
+      "word": "one"
+    },
+    {
+      "end": 149.01,
+      "start": 148.96,
+      "word": "of"
+    },
+    {
+      "end": 149.22,
+      "start": 149.05,
+      "word": "the"
+    },
+    {
+      "end": 149.43,
+      "start": 149.22,
+      "word": "most"
+    },
+    {
+      "end": 149.67,
+      "start": 149.43,
+      "word": "complex"
+    },
+    {
+      "end": 150.05,
+      "start": 149.85,
+      "word": "tasks"
+    },
+    {
+      "end": 150.22,
+      "start": 150.05,
+      "word": "you"
+    },
+    {
+      "end": 150.26,
+      "start": 150.22,
+      "word": "'d"
+    },
+    {
+      "end": 150.58,
+      "start": 150.34,
+      "word": "think"
+    },
+    {
+      "end": 150.72,
+      "start": 150.58,
+      "word": "of"
+    },
+    {
+      "end": 150.72,
+      "start": 150.72,
+      "word": ","
+    },
+    {
+      "end": 151.06,
+      "start": 150.72,
+      "word": "which"
+    },
+    {
+      "end": 151.31,
+      "start": 151.31,
+      "word": "is"
+    },
+    {
+      "end": 152.08,
+      "start": 151.35,
+      "word": "exporting"
+    },
+    {
+      "end": 152.39,
+      "start": 152.08,
+      "word": "almost"
+    },
+    {
+      "end": 152.79,
+      "start": 152.52,
+      "word": "all"
+    },
+    {
+      "end": 152.88,
+      "start": 152.79,
+      "word": "of"
+    },
+    {
+      "end": 153.15,
+      "start": 152.88,
+      "word": "the"
+    },
+    {
+      "end": 153.61,
+      "start": 153.2,
+      "word": "account"
+    },
+    {
+      "end": 153.96,
+      "start": 153.69,
+      "word": "data"
+    },
+    {
+      "end": 154.18,
+      "start": 153.96,
+      "word": "into"
+    },
+    {
+      "end": 154.23,
+      "start": 154.18,
+      "word": "a"
+    },
+    {
+      "end": 154.8,
+      "start": 154.23,
+      "word": "spreadsheet"
+    },
+    {
+      "end": 154.96,
+      "start": 154.9,
+      "word": ","
+    },
+    {
+      "end": 155.24,
+      "start": 154.96,
+      "word": "and"
+    },
+    {
+      "end": 155.36,
+      "start": 155.25,
+      "word": "it"
+    },
+    {
+      "end": 156.04,
+      "start": 155.62,
+      "word": "worked"
+    },
+    {
+      "end": 156.08,
+      "start": 156.08,
+      "word": "."
+    },
+    {
+      "end": 156.37,
+      "start": 156.08,
+      "word": "Pull"
+    },
+    {
+      "end": 156.6,
+      "start": 156.38,
+      "word": "all"
+    },
+    {
+      "end": 156.9,
+      "start": 156.6,
+      "word": "this"
+    },
+    {
+      "end": 157.2,
+      "start": 156.9,
+      "word": "data"
+    },
+    {
+      "end": 157.66,
+      "start": 157.2,
+      "word": "myself"
+    },
+    {
+      "end": 157.7,
+      "start": 157.66,
+      "word": ","
+    },
+    {
+      "end": 157.77,
+      "start": 157.7,
+      "word": "and"
+    },
+    {
+      "end": 157.81,
+      "start": 157.77,
+      "word": "it"
+    },
+    {
+      "end": 157.92,
+      "start": 157.81,
+      "word": "would"
+    },
+    {
+      "end": 158.04,
+      "start": 157.92,
+      "word": "have"
+    },
+    {
+      "end": 158.16,
+      "start": 158.04,
+      "word": "been"
+    },
+    {
+      "end": 158.22,
+      "start": 158.16,
+      "word": "a"
+    },
+    {
+      "end": 158.36,
+      "start": 158.22,
+      "word": "real"
+    },
+    {
+      "end": 158.7,
+      "start": 158.46,
+      "word": "pain"
+    },
+    {
+      "end": 158.82,
+      "start": 158.7,
+      "word": "to"
+    },
+    {
+      "end": 158.89,
+      "start": 158.82,
+      "word": "do"
+    },
+    {
+      "end": 159.12,
+      "start": 158.98,
+      "word": "all"
+    },
+    {
+      "end": 159.24,
+      "start": 159.15,
+      "word": "of"
+    },
+    {
+      "end": 159.48,
+      "start": 159.24,
+      "word": "this"
+    },
+    {
+      "end": 159.96,
+      "start": 159.48,
+      "word": "manually"
+    },
+    {
+      "end": 160.16,
+      "start": 159.96,
+      "word": "."
+    },
+    {
+      "end": 160.33,
+      "start": 160.16,
+      "word": "You"
+    },
+    {
+      "end": 160.52,
+      "start": 160.35,
+      "word": "can"
+    },
+    {
+      "end": 160.65,
+      "start": 160.52,
+      "word": "vibe"
+    },
+    {
+      "end": 160.94,
+      "start": 160.8,
+      "word": "code"
+    },
+    {
+      "end": 161.61,
+      "start": 161.05,
+      "word": "absolutely"
+    },
+    {
+      "end": 162.1,
+      "start": 161.61,
+      "word": "anything"
+    },
+    {
+      "end": 162.31,
+      "start": 162.1,
+      "word": "now"
+    },
+    {
+      "end": 162.69,
+      "start": 162.31,
+      "word": "with"
+    },
+    {
+      "end": 163.12,
+      "start": 162.72,
+      "word": "Chat"
+    },
+    {
+      "end": 163.22,
+      "start": 163.12,
+      "word": "G"
+    },
+    {
+      "end": 163.43,
+      "start": 163.22,
+      "word": "PT"
+    },
+    {
+      "end": 163.44,
+      "start": 163.43,
+      "word": ","
+    },
+    {
+      "end": 163.61,
+      "start": 163.44,
+      "word": "and"
+    },
+    {
+      "end": 163.85,
+      "start": 163.68,
+      "word": "Act"
+    },
+    {
+      "end": 164.01,
+      "start": 163.95,
+      "word": "is"
+    },
+    {
+      "end": 164.26,
+      "start": 164.02,
+      "word": "your"
+    },
+    {
+      "end": 164.53,
+      "start": 164.36,
+      "word": "own"
+    },
+    {
+      "end": 165.1,
+      "start": 164.53,
+      "word": "personal"
+    },
+    {
+      "end": 165.14,
+      "start": 165.1,
+      "word": "c"
+    },
+    {
+      "end": 165.47,
+      "start": 165.23,
+      "word": "oder"
+    },
+    {
+      "end": 165.69,
+      "start": 165.47,
+      "word": "and"
+    },
+    {
+      "end": 166.05,
+      "start": 165.69,
+      "word": "script"
+    },
+    {
+      "end": 166.77,
+      "start": 166.13,
+      "word": "assistant"
+    },
+    {
+      "end": 167.04,
+      "start": 166.82,
+      "word": "."
+    },
+    {
+      "end": 167.12,
+      "start": 167.04,
+      "word": "I"
+    },
+    {
+      "end": 167.29,
+      "start": 167.12,
+      "word": "do"
+    },
+    {
+      "end": 167.63,
+      "start": 167.29,
+      "word": "have"
+    },
+    {
+      "end": 167.7,
+      "start": 167.63,
+      "word": "a"
+    },
+    {
+      "end": 168.05,
+      "start": 167.71,
+      "word": "blog"
+    },
+    {
+      "end": 168.39,
+      "start": 168.05,
+      "word": "post"
+    },
+    {
+      "end": 168.56,
+      "start": 168.39,
+      "word": ","
+    },
+    {
+      "end": 168.64,
+      "start": 168.57,
+      "word": "P"
+    },
+    {
+      "end": 168.8,
+      "start": 168.64,
+      "word": "PC"
+    },
+    {
+      "end": 168.89,
+      "start": 168.8,
+      "word": "W"
+    },
+    {
+      "end": 169.12,
+      "start": 168.89,
+      "word": ","
+    },
+    {
+      "end": 169.26,
+      "start": 169.12,
+      "word": "in"
+    },
+    {
+      "end": 169.47,
+      "start": 169.26,
+      "word": "the"
+    },
+    {
+      "end": 170.28,
+      "start": 169.47,
+      "word": "description"
+    },
+    {
+      "end": 170.28,
+      "start": 170.28,
+      "word": ","
+    },
+    {
+      "end": 170.43,
+      "start": 170.28,
+      "word": "and"
+    },
+    {
+      "end": 170.53,
+      "start": 170.43,
+      "word": "it"
+    },
+    {
+      "end": 170.68,
+      "start": 170.53,
+      "word": "has"
+    },
+    {
+      "end": 170.89,
+      "start": 170.68,
+      "word": "just"
+    },
+    {
+      "end": 170.94,
+      "start": 170.89,
+      "word": "a"
+    },
+    {
+      "end": 171.18,
+      "start": 170.94,
+      "word": "link"
+    },
+    {
+      "end": 171.42,
+      "start": 171.18,
+      "word": "to"
+    },
+    {
+      "end": 171.51,
+      "start": 171.42,
+      "word": "a"
+    },
+    {
+      "end": 171.91,
+      "start": 171.55,
+      "word": "big"
+    },
+    {
+      "end": 172.42,
+      "start": 171.91,
+      "word": "list"
+    },
+    {
+      "end": 172.52,
+      "start": 172.42,
+      "word": "of"
+    },
+    {
+      "end": 173.02,
+      "start": 172.53,
+      "word": "potential"
+    },
+    {
+      "end": 173.41,
+      "start": 173.12,
+      "word": "Google"
+    },
+    {
+      "end": 173.47,
+      "start": 173.41,
+      "word": "Ad"
+    },
+    {
+      "end": 173.96,
+      "start": 173.51,
+      "word": "scripts"
+    },
+    {
+      "end": 174.34,
+      "start": 173.96,
+      "word": "that"
+    },
+    {
+      "end": 174.53,
+      "start": 174.34,
+      "word": "you"
+    },
+    {
+      "end": 174.9,
+      "start": 174.67,
+      "word": "can"
+    },
+    {
+      "end": 175.18,
+      "start": 174.9,
+      "word": "see"
+    },
+    {
+      "end": 175.48,
+      "start": 175.18,
+      "word": "."
+    },
+    {
+      "end": 175.55,
+      "start": 175.48,
+      "word": "I"
+    },
+    {
+      "end": 175.78,
+      "start": 175.65,
+      "word": "put"
+    },
+    {
+      "end": 175.85,
+      "start": 175.78,
+      "word": "a"
+    },
+    {
+      "end": 176.12,
+      "start": 175.85,
+      "word": "note"
+    },
+    {
+      "end": 176.31,
+      "start": 176.19,
+      "word": "on"
+    },
+    {
+      "end": 176.54,
+      "start": 176.31,
+      "word": "the"
+    },
+    {
+      "end": 176.87,
+      "start": 176.54,
+      "word": "ones"
+    },
+    {
+      "end": 177.24,
+      "start": 176.88,
+      "word": "that"
+    },
+    {
+      "end": 178.04,
+      "start": 177.24,
+      "word": "I"
+    },
+    {
+      "end": 178.24,
+      "start": 178.04,
+      "word": "am"
+    },
+    {
+      "end": 178.6,
+      "start": 178.24,
+      "word": "trying"
+    },
+    {
+      "end": 178.71,
+      "start": 178.6,
+      "word": "to"
+    },
+    {
+      "end": 178.93,
+      "start": 178.71,
+      "word": "look"
+    },
+    {
+      "end": 179.09,
+      "start": 178.93,
+      "word": "for"
+    },
+    {
+      "end": 179.14,
+      "start": 179.09,
+      "word": "a"
+    },
+    {
+      "end": 179.75,
+      "start": 179.14,
+      "word": "replacement"
+    },
+    {
+      "end": 179.89,
+      "start": 179.75,
+      "word": "for"
+    },
+    {
+      "end": 180.12,
+      "start": 179.91,
+      "word": "."
+    },
+    {
+      "end": 180.3,
+      "start": 180.12,
+      "word": "Like"
+    },
+    {
+      "end": 180.39,
+      "start": 180.3,
+      "word": ","
+    },
+    {
+      "end": 180.57,
+      "start": 180.39,
+      "word": "this"
+    },
+    {
+      "end": 180.7,
+      "start": 180.57,
+      "word": "one"
+    },
+    {
+      "end": 180.84,
+      "start": 180.71,
+      "word": "isn"
+    },
+    {
+      "end": 180.94,
+      "start": 180.87,
+      "word": "'t"
+    },
+    {
+      "end": 181.26,
+      "start": 180.94,
+      "word": "working"
+    },
+    {
+      "end": 181.44,
+      "start": 181.26,
+      "word": "."
+    },
+    {
+      "end": 181.73,
+      "start": 181.44,
+      "word": "This"
+    },
+    {
+      "end": 181.87,
+      "start": 181.73,
+      "word": "is"
+    },
+    {
+      "end": 182.16,
+      "start": 181.87,
+      "word": "from"
+    },
+    {
+      "end": 182.51,
+      "start": 182.16,
+      "word": "Brain"
+    },
+    {
+      "end": 182.64,
+      "start": 182.51,
+      "word": "Labs"
+    },
+    {
+      "end": 183.04,
+      "start": 182.82,
+      "word": "."
+    },
+    {
+      "end": 183.4,
+      "start": 183.04,
+      "word": "Ident"
+    },
+    {
+      "end": 183.64,
+      "start": 183.53,
+      "word": "ify"
+    },
+    {
+      "end": 183.86,
+      "start": 183.64,
+      "word": "and"
+    },
+    {
+      "end": 184.77,
+      "start": 183.86,
+      "word": "automatically"
+    },
+    {
+      "end": 185.16,
+      "start": 184.98,
+      "word": "fill"
+    },
+    {
+      "end": 185.31,
+      "start": 185.16,
+      "word": "ad"
+    },
+    {
+      "end": 185.8,
+      "start": 185.31,
+      "word": "groups"
+    },
+    {
+      "end": 186.23,
+      "start": 185.8,
+      "word": "without"
+    },
+    {
+      "end": 186.35,
+      "start": 186.23,
+      "word": "ad"
+    },
+    {
+      "end": 186.54,
+      "start": 186.35,
+      "word": "."
+    },
+    {
+      "end": 186.74,
+      "start": 186.54,
+      "word": "You"
+    },
+    {
+      "end": 186.94,
+      "start": 186.74,
+      "word": "can"
+    },
+    {
+      "end": 187.21,
+      "start": 186.94,
+      "word": "just"
+    },
+    {
+      "end": 187.33,
+      "start": 187.21,
+      "word": "go"
+    },
+    {
+      "end": 187.47,
+      "start": 187.4,
+      "word": "to"
+    },
+    {
+      "end": 187.68,
+      "start": 187.47,
+      "word": "Chat"
+    },
+    {
+      "end": 187.76,
+      "start": 187.75,
+      "word": "G"
+    },
+    {
+      "end": 187.96,
+      "start": 187.8,
+      "word": "PT"
+    },
+    {
+      "end": 188.17,
+      "start": 187.96,
+      "word": "and"
+    },
+    {
+      "end": 188.24,
+      "start": 188.17,
+      "word": "ask"
+    },
+    {
+      "end": 188.89,
+      "start": 188.37,
+      "word": "Chat"
+    },
+    {
+      "end": 188.98,
+      "start": 188.89,
+      "word": "G"
+    },
+    {
+      "end": 189.23,
+      "start": 189.04,
+      "word": "PT"
+    },
+    {
+      "end": 189.36,
+      "start": 189.28,
+      "word": "to"
+    },
+    {
+      "end": 189.64,
+      "start": 189.41,
+      "word": "create"
+    },
+    {
+      "end": 189.79,
+      "start": 189.65,
+      "word": "that"
+    },
+    {
+      "end": 189.98,
+      "start": 189.91,
+      "word": "for"
+    },
+    {
+      "end": 190.09,
+      "start": 189.98,
+      "word": "you"
+    },
+    {
+      "end": 190.28,
+      "start": 190.16,
+      "word": "."
+    },
+    {
+      "end": 190.46,
+      "start": 190.28,
+      "word": "You"
+    },
+    {
+      "end": 190.7,
+      "start": 190.48,
+      "word": "need"
+    },
+    {
+      "end": 190.82,
+      "start": 190.7,
+      "word": "no"
+    },
+    {
+      "end": 191.19,
+      "start": 190.82,
+      "word": "coding"
+    },
+    {
+      "end": 191.74,
+      "start": 191.19,
+      "word": "knowledge"
+    },
+    {
+      "end": 191.96,
+      "start": 191.74,
+      "word": "."
+    },
+    {
+      "end": 192.03,
+      "start": 191.96,
+      "word": "I"
+    },
+    {
+      "end": 192.29,
+      "start": 192.04,
+      "word": "don"
+    },
+    {
+      "end": 192.44,
+      "start": 192.29,
+      "word": "'t"
+    },
+    {
+      "end": 192.7,
+      "start": 192.45,
+      "word": "have"
+    },
+    {
+      "end": 193.03,
+      "start": 192.8,
+      "word": "the"
+    },
+    {
+      "end": 193.44,
+      "start": 193.03,
+      "word": "first"
+    },
+    {
+      "end": 193.77,
+      "start": 193.44,
+      "word": "real"
+    },
+    {
+      "end": 194.13,
+      "start": 193.77,
+      "word": "clue"
+    },
+    {
+      "end": 194.39,
+      "start": 194.14,
+      "word": "about"
+    },
+    {
+      "end": 194.76,
+      "start": 194.44,
+      "word": "coding"
+    },
+    {
+      "end": 194.76,
+      "start": 194.76,
+      "word": ","
+    },
+    {
+      "end": 194.94,
+      "start": 194.76,
+      "word": "but"
+    },
+    {
+      "end": 195.07,
+      "start": 194.95,
+      "word": "it"
+    },
+    {
+      "end": 195.15,
+      "start": 195.07,
+      "word": "works"
+    },
+    {
+      "end": 195.6,
+      "start": 195.39,
+      "word": "."
+    },
+    {
+      "end": 195.9,
+      "start": 195.6,
+      "word": "Google"
+    },
+    {
+      "end": 196.01,
+      "start": 195.9,
+      "word": "Ad"
+    },
+    {
+      "end": 196.37,
+      "start": 196.01,
+      "word": "scripts"
+    },
+    {
+      "end": 196.59,
+      "start": 196.42,
+      "word": "just"
+    },
+    {
+      "end": 196.77,
+      "start": 196.59,
+      "word": "with"
+    },
+    {
+      "end": 197.0,
+      "start": 196.79,
+      "word": "Chat"
+    },
+    {
+      "end": 197.06,
+      "start": 197.04,
+      "word": "G"
+    },
+    {
+      "end": 197.16,
+      "start": 197.06,
+      "word": "PT"
+    },
+    {
+      "end": 197.2,
+      "start": 197.16,
+      "word": "or"
+    },
+    {
+      "end": 197.36,
+      "start": 197.33,
+      "word": "Cl"
+    },
+    {
+      "end": 197.46,
+      "start": 197.36,
+      "word": "od"
+    },
+    {
+      "end": 197.48,
+      "start": 197.46,
+      "word": "."
+    }
+  ]
+}

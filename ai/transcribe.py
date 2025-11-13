@@ -24,9 +24,7 @@ async def transcribe(
         None, alias="timestamp_granularities[]"
     ),
 ):
-
-    print(f"timestamp_granularities: {timestamp_granularities}")
-    print(f"type: {type(timestamp_granularities)}")
+    print("received request")
 
     # save the wav
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
@@ -66,7 +64,7 @@ async def transcribe(
 
         for i, seg in enumerate(whisper_output.get("transcription", [])):
             seg_text = seg["text"]
-            full_text += seg_text
+            full_text += seg_text + "\n"
 
             seg_start = seg["offsets"]["from"] / 1000.0
             seg_end = seg["offsets"]["to"] / 1000.0

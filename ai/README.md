@@ -153,6 +153,57 @@ with open("audio.wav", "rb") as f:
 print(resp)
 ```
 
+### CLI wrapper HTTP API
+In addition to the OpenAI-compatible endpoints above, this repo now exposes a simple HTTP API that mirrors the CLI behavior from `main.py`.
+
+Run the API (from the `ai/` directory):
+```bash
+cd ai
+uvicorn api:app --host 0.0.0.0 --port 8080
+```
+
+Endpoints:
+- `GET /health` — health check
+- `POST /ensure_whisper_server` — ensure the underlying Whisper server is up (JSON: `{port, host}`)
+- `POST /process` — process a local path or YouTube URL (JSON)
+- `POST /upload` — upload a file and process (multipart/form-data)
+
+Request shapes:
+```json
+// POST /process (application/json)
+{
+  "input": "path/or/url",
+  "output": "optional/output/dir",
+  "speakers": null,
+  "no_diarize": false,
+  "keep_temp": false,
+  "whisper_port": 8000,
+  "no_server": false,
+  "return_json": false
+}
+```
+
+```bash
+# POST /upload (multipart/form-data)
+curl -s -X POST http://localhost:8080/upload \
+  -F file=@audio.wav \
+  -F output=transcripts \
+  -F no_diarize=false \
+  -F whisper_port=8000 \
+  -F no_server=false \
+  -F return_json=true | jq .
+``;
+
+Response shape:
+```json
+{ "output_file": "path/to/file.combined.json", "data": { /* optional, if return_json=true */ } }
+```
+
+Notes:
+- The API auto-starts the Whisper server unless `no_server` is true.
+- YouTube URLs are supported via `input` on `/process` just like the CLI.
+- The `speakers` flag is currently not wired (see Known limitations).
+
 ## Outputs
 For an input base name like `sample` and output directory `out/`, the CLI writes:
 

@@ -16,4 +16,9 @@ models/
 # Audio files
 *.wav
 
+# Outputs
+*.combined.json
+*.diarization.json
+*.transcription.json
+
 *.env
