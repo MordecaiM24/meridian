@@ -188,7 +188,8 @@ final class MeridianViewModel: ObservableObject {
             id: experience.id,
             transcript: updatedTranscript,
             outputFile: experience.outputFile,
-            date: experience.date
+            date: experience.date,
+            title: experience.title
         )
         
         experiences[index] = updatedExperience
@@ -200,6 +201,40 @@ final class MeridianViewModel: ObservableObject {
         } catch {
             experiences[index] = experience
             status = .failure("Updated speaker but failed to save: \(error.localizedDescription)")
+        }
+    }
+    
+    func updateTitle(for experienceID: UUID, newTitle rawTitle: String) {
+        let trimmedTitle = rawTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedTitle.isEmpty else {
+            status = .failure("Title cannot be empty.")
+            return
+        }
+        
+        guard let index = experiences.firstIndex(where: { $0.id == experienceID }) else {
+            status = .failure("Could not locate the experience to update.")
+            return
+        }
+        
+        let experience = experiences[index]
+        
+        let updatedExperience = Experience(
+            id: experience.id,
+            transcript: experience.transcript,
+            outputFile: experience.outputFile,
+            date: experience.date,
+            title: trimmedTitle
+        )
+        
+        experiences[index] = updatedExperience
+        
+        do {
+            try persistExperiences()
+            lastError = nil
+            status = .success("Renamed experience to \"\(trimmedTitle)\"")
+        } catch {
+            experiences[index] = experience
+            status = .failure("Updated title but failed to save: \(error.localizedDescription)")
         }
     }
     

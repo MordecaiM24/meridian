@@ -23,13 +23,14 @@ struct Experience: Identifiable, Hashable, Codable {
         id: UUID = UUID(),
         transcript: CombinedTranscript,
         outputFile: String,
-        date: Date = Date()
+        date: Date = Date(),
+        title: String? = nil
     ) {
         self.id = id
         self.transcript = transcript
         self.outputFile = outputFile
         self.date = date
-        self.title = Experience.makeTitle(from: transcript)
+        self.title = title ?? Experience.makeTitle(from: transcript)
         self.duration = Experience.makeDuration(from: transcript)
         self.speakerCount = Experience.makeSpeakerCount(from: transcript)
     }
@@ -63,7 +64,7 @@ extension Experience {
         guard let text = transcript.segments.first?.text.trimmingCharacters(in: .whitespacesAndNewlines),
               !text.isEmpty
         else {
-            return "Untitled Experience"
+            return "Untitled"
         }
 
         let words = text
@@ -71,7 +72,7 @@ extension Experience {
             .prefix(3)
 
         let title = words.map(String.init).joined(separator: " ")
-        return title.isEmpty ? "Untitled Experience" : title
+        return title.isEmpty ? "Untitled" : title
     }
 
     private static func makeDuration(from transcript: CombinedTranscript) -> String? {

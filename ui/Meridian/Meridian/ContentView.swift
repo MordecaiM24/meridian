@@ -30,6 +30,12 @@ struct MeridianView: View {
                             speakerID: speakerID,
                             newName: newName
                         )
+                    },
+                    onRenameTitle: { newTitle in
+                        viewModel.updateTitle(
+                            for: experience.id,
+                            newTitle: newTitle
+                        )
                     }
                 )
             } else {
@@ -533,6 +539,11 @@ struct PlaylistLinkSheet: View {
 struct ExperienceDetailView: View {
     let experience: Experience
     let onRenameSpeaker: (String, String) -> Void
+    let onRenameTitle: (String) -> Void
+    
+    @State private var isEditingTitle = false
+    @State private var editingTitle = ""
+    @FocusState private var isTitleFocused: Bool
     
     var body: some View {
         ScrollView {
@@ -553,17 +564,86 @@ struct ExperienceDetailView: View {
             .padding()
         }
         .background(Color(NSColor.controlBackgroundColor))
+        .onChange(of: experience.title) { _, _ in
+            if !isEditingTitle {
+                editingTitle = experience.title
+            }
+        }
+        .onAppear {
+            editingTitle = experience.title
+        }
     }
     
     private var headerView: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(experience.title)
-                .font(.largeTitle)
-                .fontWeight(.bold)
+            if isEditingTitle {
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    TextField("Title", text: $editingTitle)
+                        .textFieldStyle(.plain)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .focused($isTitleFocused)
+                        .onSubmit {
+                            commitTitleEditing()
+                        }
+                        .padding(.horizontal, 4)
+                        .padding(.vertical, 2)
+                        .background(
+                            RoundedRectangle(cornerRadius: 4)
+                                .strokeBorder(Color.accentColor.opacity(0.5), lineWidth: 1)
+                        )
+                    Button {
+                        commitTitleEditing()
+                    } label: {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.title2)
+                    }
+                    .buttonStyle(.borderless)
+                    .keyboardShortcut(.return, modifiers: [])
+                    
+                    Button(role: .cancel) {
+                        cancelTitleEditing()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title2)
+                    }
+                    .buttonStyle(.borderless)
+                }
+            } else {
+                Text(experience.title)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .onTapGesture {
+                        startTitleEditing()
+                    }
+            }
             Text("Created \(experience.date.formatted(date: .abbreviated, time: .shortened))")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
+    }
+    
+    private func startTitleEditing() {
+        editingTitle = experience.title
+        isEditingTitle = true
+        isTitleFocused = true
+    }
+    
+    private func commitTitleEditing() {
+        let trimmed = editingTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else {
+            cancelTitleEditing()
+            return
+        }
+        onRenameTitle(trimmed)
+        isEditingTitle = false
+        isTitleFocused = false
+    }
+    
+    private func cancelTitleEditing() {
+        editingTitle = experience.title
+        isEditingTitle = false
+        isTitleFocused = false
     }
     
     @ViewBuilder
