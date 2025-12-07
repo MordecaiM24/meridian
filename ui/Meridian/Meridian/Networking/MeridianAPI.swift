@@ -177,10 +177,24 @@ public final class MeridianAPI {
 
     public init(
         configuration: MeridianAPIConfiguration = MeridianAPIConfiguration(),
-        session: URLSession = .shared
+        session: URLSession? = nil
     ) {
         self.configuration = configuration
-        self.session = session
+        
+        // Create a custom session configuration with extended timeouts for large file uploads
+        if let session = session {
+            self.session = session
+        } else {
+            let config = URLSessionConfiguration.default
+            // Timeout for individual request operations (default is 60 seconds)
+            config.timeoutIntervalForRequest = 300 // 5 minutes
+            // Timeout for entire resource transfer (default is 7 days, but we'll set it explicitly)
+            config.timeoutIntervalForResource = 3600 // 1 hour - adjust as needed for very large files
+            // Allow background tasks if needed
+            config.allowsCellularAccess = true
+            self.session = URLSession(configuration: config)
+        }
+        
         self.encoder = JSONEncoder()
         self.encoder.keyEncodingStrategy = .convertToSnakeCase
         self.decoder = JSONDecoder()
