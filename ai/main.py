@@ -65,26 +65,37 @@ def process_audio(
     if input_path.suffix == ".wav":
         audio_file = input_path
         base_name = input_path.stem
-    elif input_path.suffix in [".mp4", ".mp3", ".m4a"]:
-        # convert to wav
+    else:
+        # attempt conversion for any file type
         base_name = input_path.stem
         audio_file = output_dir / f"{base_name}.wav"
         print(f"converting {input_path} to wav...")
-        subprocess.run(
-            [
-                "ffmpeg",
-                "-i",
-                str(input_path),
-                "-ar",
-                "16000",
-                "-ac",
-                "1",
-                str(audio_file),
-            ],
-            check=True,
-        )
-    else:
-        raise ValueError(f"unsupported file type: {input_path.suffix}")
+        try:
+            result = subprocess.run(
+                [
+                    "ffmpeg",
+                    "-i",
+                    str(input_path),
+                    "-ar",
+                    "16000",
+                    "-ac",
+                    "1",
+                    "-y",  # overwrite output file if it exists
+                    str(audio_file),
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+        except subprocess.CalledProcessError as e:
+            error_msg = e.stderr if e.stderr else str(e)
+            raise ValueError(
+                f"failed to convert {input_path.suffix} file to audio: {error_msg}"
+            )
+        except FileNotFoundError:
+            raise ValueError(
+                "ffmpeg not found. Please install ffmpeg to convert audio/video files."
+            )
 
     # transcribe
     print(f"transcribing {audio_file}...")
@@ -99,7 +110,7 @@ def process_audio(
             response_format="verbose_json",
             timestamp_granularities=["word", "segment"],
         )
-    
+
     # save raw transcription
     transcription_file = output_dir / f"{base_name}.transcription.json"
     with open(transcription_file, "w") as f:
